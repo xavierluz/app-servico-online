@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+/* Layout */
+.wrapper {
+
+    min-height: 100% !important;
+    height:  100% !important;
+
+  }
+
+.centralizadoDiv {
+    margin: 0 auto !important;
+    float: none!important;
+}

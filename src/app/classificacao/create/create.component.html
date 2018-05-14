@@ -1,0 +1,52 @@
+<div class="content-wrapper">
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-8 col-sm-6 col-md-8">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Classificar a categoria do item de material</h3>
+                        </div>
+                        <form method="post" role="form" class="form-horizontal" action="/Classificacao/Create">
+                            
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="categoriaId">Categoria</label>
+                                <div class="col-md-9">
+                                    <select class="form-control" data-val="true" data-val-required="Selecione a categoria" id="categoriaId" name="categoriaId">
+                                    <option value="">Selecione a categoria</option>
+                                    </select>
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="categoriaId" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="Nome">Nome</label>
+                                <div class="col-md-9">
+                                    <input class="form-control" type="text" data-val="true" data-val-required="Informe o nome da classificação" id="Nome" name="Nome" value="">
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="Nome" data-valmsg-replace="true"></span>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="Descricao">Descrição</label>
+                                <div class="col-md-9">
+                                    <textarea class="form-control" rows="3" cols="3" data-val="true" data-val-length="Descrição deve possuir no mínimo 10 caracteres" data-val-length-max="500" data-val-length-min="10" id="Descricao" name="Descricao"></textarea>
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="Descricao" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="Status">Status</label>
+                                <div class="col-md-9">
+                                    <select class="form-control" id="Status" name="Status"><option value="AT">Ativo</option>
+                                    <option value="IT">Inativo</option>
+                                    </select>
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="Status" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <app-evento-cancelar-salvar></app-evento-cancelar-salvar>
+                        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8JXjCPgS7dhCll3leW9uQXDNVkSuweFK8OPG3Qf9sAe5Own4ob0mEwpYm0gfsm-0kX44-XXN9B4bX4uLfY0q-SHswdk6nZNvl3O2BCRLNGnrtksDrHgh5KnMIHazxKd8ZMwGrqNtCQD-kI3ylU06BrI">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

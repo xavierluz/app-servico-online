@@ -1,0 +1,43 @@
+<div class="row">
+    <hr/>
+    <div class="col-xs-12 col-sm-8 col-md-12" style="margin:5px 10px 5px 10px !important;">
+        <div class="row">
+            <div class="col-xs-1 col-sm-1 col-md-1"></div>
+            <div class="col-lg-10">
+                <a [routerLink]="['../create']" routerLinkActive="active"  class="btn btn-openid">
+                    <span class="glyphicon glyphicon-new-window" aria-hidden="true" data-toggle="tooltip" title="Nova Categoria"></span>
+                </a>
+            </div>
+        </div>
+        <p></p>
+        
+        <div class="row">
+            <div class="col-xs-1 col-sm-1 col-md-1"></div>
+                <div class="col-xs-10 col-sm-7 col-md-10 table-responsive" style="border-bottom:solid 0px #ffffff;border-left:solid 0px #ffffff;border-right:solid 0px #ffffff">
+                    <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                        <thead>
+                            <tr>
+                                <th data-sortable="true" class="td-invisivel">Id</th>
+                                <th data-sortable="false">Image</th>
+                                <th data-sortable="true">Nome</th>
+                                <th data-sortable="true">Descrição</th>
+                                <th data-sortable="true">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let categoria of categorias">
+                                <td class="td-invisivel">{{ categoria.Id }}</td>
+                                <td> <span class="place-info-box-icon">
+                                    <img [src]="categoria.caminhoImage" /></span>
+                                </td>
+                                <td>{{ categoria.Nome }}</td>
+                                <td>{{ categoria.Descricao }}</td>
+                                <td>{{ categoria.Status }}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

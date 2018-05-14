@@ -1,0 +1,58 @@
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-8 col-sm-8 col-md-8">
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <h3 class="box-title">Cadastro de serviço</h3>
+          </div>
+          <form id="formServico" method="post" class="form-horizontal" role="form" action="/Servico/_Create">
+            <div class="form-group">
+              <label class="control-label col-md-2" for="TipoServicoId">Tipo</label>
+              <div class="col-md-9">
+                <select class="form-control" data-val="true" data-val-required="Tipo de serviço é obrigatório" id="TipoServicoId" name="TipoServicoId">
+                  <option value="">Selecione o tipo de serviço</option>
+                </select>
+
+                <span class="text-danger field-validation-valid" data-valmsg-for="TipoServicoId" data-valmsg-replace="true"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-2" for="TipoServicoId">Materiais</label>
+              <div class="col-md-9">
+                <angular2-multiselect [data]="dropdownList" [(ngModel)]="selectedItems" name="Paises" [settings]="dropdownSettings" (onSelect)="onItemSelect($event)"
+                  (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)"></angular2-multiselect>
+              </div>
+              
+            </div>
+
+
+            <div class="form-group">
+              <label class="control-label col-md-2" for="Descricao">Descrição</label>
+              <div class="col-md-9">
+                <textarea class="form-control" rows="3" cols="3" data-val="true" data-val-length="Descrição deve possuir no mínimo 10 e no máximo 500 caracteres"
+                  data-val-length-max="500" data-val-length-min="10" data-val-maxlength="Descrição deve ter no máximo de 500 caracteres"
+                  data-val-maxlength-max="500" id="Descricao" name="Descricao"></textarea>
+                <span class="text-danger field-validation-valid" data-valmsg-for="Descricao" data-valmsg-replace="true"></span>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+
+              <label class="control-label col-md-2" for="ValorUnitario">Valor</label>
+              <div class="col-md-4">
+                <input id="ValorUnitario" name="ValorUnitario" class="form-control Moeda" placeholder="R$ 0,00" currencyMask [(ngModel)]="value"
+                  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" data-val="true" data-val-number="The field Preço must be a number."
+                  data-val-required="Valor unitário é obrigatório" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="ValorUnitario" data-valmsg-replace="true"></span>
+              </div>
+            </div>
+            <app-evento-cancelar-salvar></app-evento-cancelar-salvar>
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8JXjCPgS7dhCll3leW9uQXB_gPBjdo7RgyE_-phmVEeHo80tFBX2MM4bI_Kl6mBcNRErddYDJXlWUsEtnfPh0m0C94BMxVmAbz4cDzXwt_jZHwpjfol1bjgAXsKcwlrq-VWVPHyW82XiWPWKcB1D1V8">
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

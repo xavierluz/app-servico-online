@@ -1,0 +1,53 @@
+<!-- INíCIO do CONTEÚDO -->
+<section class="content-header">
+  <h1>
+    Todos os Serviços
+  </h1>
+</section>
+<section class="content">
+  <div class="row">
+    <div *ngFor="let servico of servicosTables" class="col-sm-6 col-xs-12">
+      <!-- small box -->
+      <div class="small-box bg-yellow">
+        <div class="inner">
+          <h3>{{servico.TipoServicoNome}}</h3>
+
+          <p>{{servico.ValorTotal}}</p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-person-add"></i>
+        </div>
+        <a href="#" class="small-box-footer">{{servico.Descricao}}
+          <i class="fa fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-3 col-xs-6 centralizadoDiv">
+
+
+        <!-- Paginação -->
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(1)">Início</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(pager.currentPage - 1)">Anterior</a>
+          </li>
+          <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a (click)="setPage(page)">{{page}}</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.currentPage + 1)">Próximo</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.totalPages)">Último</a>
+          </li>
+        </ul>
+      </div>
+
+
+    </div>
+
+  </div>
+</section>
