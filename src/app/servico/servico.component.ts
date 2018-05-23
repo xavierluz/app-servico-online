@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicoComponenteService } from './servico/servico-componente.service';
+import { ServicoModel } from './model/servico.model';
 
 @Component({
   selector: 'app-servico',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servico.component.css']
 })
 export class ServicoComponent implements OnInit {
-
-  constructor() { }
+  servicoModel:ServicoModel[];
+  
+  constructor(private servicoComponenteService:ServicoComponenteService) {
+    this.servicoComponenteService.servicos().subscribe(servico => this.servicoModel = servico);    
+   }
 
   ngOnInit() {
   }

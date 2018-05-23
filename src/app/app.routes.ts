@@ -18,6 +18,9 @@ import {TipoServicoCreateComponent}  from './tipo-servico/tipo-servico-create/ti
 import { ServicoComponent } from './servico/servico.component';
 import { ServicoIndexComponent } from './servico/servico-index/servico-index.component';
 import { ServicoCreateComponent } from './servico/servico-create/servico-create.component';
+import { ServicoDetalheComponent } from './servico/servico-detalhe/servico-detalhe.component';
+import { CategoriaDetalheComponent } from './categoria-detalhe/categoria-detalhe.component';
+import { CategoriaServicoComponent } from './categoria-detalhe/categoria-servico/categoria-servico.component';
 export const ROUTES: Routes =[
     {path: '',component:HomeComponent},
     {path:'categoria', component:CategoriaComponent, children:[
@@ -43,5 +46,12 @@ export const ROUTES: Routes =[
     {path:'servico',component:ServicoComponent, children:[
         {path:'index',component:ServicoIndexComponent},
         {path:'create',component:ServicoCreateComponent}
-      ]}
+      ]},
+    {path:'servico/:id',component:CategoriaDetalheComponent, 
+        children:[
+            {path:'',redirectTo:'categoria-servico', pathMatch: 'full'},
+            {path:'categoria-servico',component:CategoriaServicoComponent},
+            {path:'reviewsServico',component:ServicoCreateComponent}
+        ]
+    }
 ];

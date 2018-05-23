@@ -1,8 +1,8 @@
 export interface CategoriaModel{
-    Id:string;
-    Nome:string;
-    Descricao:string;
-    Status:string;
+    id:string;
+    nome:string;
+    descricao:string;
+    status:string;
     caminhoImage:string;
 
 }

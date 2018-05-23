@@ -44,6 +44,13 @@ import {PagerService} from './paginacao/pagina-service';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { PagamentoIndexComponent } from './pagamento/pagamento-index/pagamento-index.component';
 import { PagamentoCreateComponent } from './pagamento/pagamento-create/pagamento-create.component';
+import { ServicoComponenteService } from './servico/servico/servico-componente.service';
+import { ServicoDetalheComponent } from './servico/servico-detalhe/servico-detalhe.component';
+import { CompraComponent } from './compra/compra.component';
+import { CompraService } from './compra/servico/compra.service';
+import { CategoriaDetalheComponent } from './categoria-detalhe/categoria-detalhe.component';
+import { CategoriaServicoComponent } from './categoria-detalhe/categoria-servico/categoria-servico.component';
+import { CategoriaServicoItemComponent } from './categoria-detalhe/categoria-servico-item/categoria-servico-item.component';
 @NgModule({ 
   declarations: [
     AppComponent,
@@ -75,7 +82,12 @@ import { PagamentoCreateComponent } from './pagamento/pagamento-create/pagamento
     DropdownComponent,
     PagamentoComponent,
     PagamentoIndexComponent,
-    PagamentoCreateComponent
+    PagamentoCreateComponent,
+    ServicoDetalheComponent,
+    CategoriaServicoComponent,
+    CategoriaServicoItemComponent,
+    CompraComponent,
+    CategoriaDetalheComponent
 
   ],
   imports: [
@@ -87,7 +99,7 @@ import { PagamentoCreateComponent } from './pagamento/pagamento-create/pagamento
     AngularMultiSelectModule,
     CurrencyMaskModule
   ],
-  providers: [CategoriaService,ClienteService,ItemMaterialService,TipoServicoService,ServicoService,PagerService],
+  providers: [CategoriaService,ClienteService,ItemMaterialService,TipoServicoService,ServicoService,PagerService,ServicoComponenteService,CompraService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

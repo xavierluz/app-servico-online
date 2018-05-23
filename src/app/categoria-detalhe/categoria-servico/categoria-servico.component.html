@@ -1,0 +1,8 @@
+<div class="col-md-9 col-xs-12">
+  <app-categoria-servico-item *ngFor="let categoriaServico of categoriaServicos | async" [categoriaServicoItem] ="categoriaServico" (add) ="compras.addItem($event)" ></app-categoria-servico-item>
+</div>
+<div class="col-md-3 col-xs-12">
+<!--INICIO DO CARRINHO-->
+<app-compra #compras></app-compra>
+<!-- FIM DO CARRINHO -->
+</div>

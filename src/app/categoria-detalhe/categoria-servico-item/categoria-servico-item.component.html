@@ -1,0 +1,10 @@
+<div class="menu-item-info-box">
+  <span class="menu-item-info-box-icon"><img [src]="categoriaServicoItem?.caminhoImage"></span>
+
+  <div class="menu-item-info-box-content">
+    <span class="menu-item-info-box-text">{{categoriaServicoItem.nome}}</span>
+    <span class="menu-item-info-box-detail">{{categoriaServicoItem.descricao}}</span>
+    <span class="menu-item-info-box-price">{{categoriaServicoItem.valor | currency: 'BRL':true}}</span>
+    <a (click)="emitAddEvent()"  class=""><i class="fa fa-plus-circle"></i> Adicionar</a>
+  </div>
+</div>

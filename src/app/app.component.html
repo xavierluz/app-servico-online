@@ -2,11 +2,7 @@
 <app-side-bar-menu-online></app-side-bar-menu-online>
 <div class="content-wrapper">
   <section class="content-header">
-    <h1>
-      Online Serviço
-      <small>Version 2.0</small>
-    </h1>
-    <ol class="breadcrumb">
+     <ol class="breadcrumb">
       <li><a [routerLink]="''" routerLinkActive="active"><i class="fa fa-dashboard"></i> Home</a></li>
       <li *ngFor="let tituloModel of _tituloModulo" class="active">
         {{tituloModel.Titulo}}
