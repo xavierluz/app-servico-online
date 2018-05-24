@@ -1,7 +1,8 @@
 export interface TipoServicoModel{
-  Id:number;
-  Tipo:string;
-  Descricao:string;
-  Status:string;
-  Valor:number;
+  id:string;
+  descricao: string;
+  categoriaNome: string;
+  categoriaId: number;
+  caminhoImage:string;
+  avaliacao: number;
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TipoServicoModel } from './model/tipo.servico.model';
+import { TipoServicoService } from './servico/tipo.servico.service';
 
 @Component({
   selector: 'app-tipo-servico',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TipoServicoComponent implements OnInit {
 
-  constructor() { }
+  tipoServicos:TipoServicoModel[];
+
+  constructor(private tipoServicoService:TipoServicoService) { 
+    this.tipoServicoService.tipoServicos().subscribe(tipoServico => this.tipoServicos = tipoServico);      
+  }
 
   ngOnInit() {
   }

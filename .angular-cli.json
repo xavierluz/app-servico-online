@@ -25,6 +25,8 @@
         "../node_modules/jvectormap/jquery-jvectormap.css",
         "../node_modules/AdminLTE/dist/css/AdminLTE.min.css",
         "../node_modules/AdminLTE/dist/css/skins/_all-skins.min.css",
+        "../node_modules/AdminLTE/dist/css/skins/skin-red.min.css",
+        "../node_modules/AdminLTE/plugins/iCheck/flat/red.css",
         "../node_modules/datatables.net-dt/css/jquery.dataTables.css"
       ],
       "scripts": [

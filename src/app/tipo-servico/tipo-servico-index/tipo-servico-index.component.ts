@@ -14,7 +14,7 @@ export class TipoServicoIndexComponent implements OnInit {
   constructor(private tipoServicoService:TipoServicoService) { }
 
   ngOnInit() {
-    this.tipoServicos = this.tipoServicoService.getTipoServicos();
+    this.tipoServicos = [];
     const that = this;
     this.dtOptions = {
       pagingType: 'full_numbers',

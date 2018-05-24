@@ -149,220 +149,140 @@
   ],
   "tipoServico": [
     {
-      "id": 1,
-      "tipo": "Corte Feminino",
-      "descricao": "Corte para cabelo feminino, moldado para um estilo próprio, desde o corte ao estilo",
-      "status": "AT",
-      "valor": 180
-    },
-    {
-      "id": 2,
-      "tipo": "Corte Masculino",
-      "descricao": "Corte para cabelo feminino, moldado para um estilo próprio, desde o corte ao estilo",
-      "status": "AT",
-      "valor": 180
-    },
-    {
-      "id": 3,
-      "tipo": "Alisamento",
-      "descricao": "Corte para cabelo feminino, moldado para um estilo próprio, desde o corte ao estilo",
-      "status": "AT",
-      "valor": 280
-    },
-    {
-      "id": 4,
-      "tipo": "Escova",
-      "descricao": "Corte para cabelo feminino, moldado para um estilo próprio, desde o corte ao estilo",
-      "status": "AT",
-      "valor": 280
-    }
-  ],
-  "servico": [
-    {
       "id": "1",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
-      "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
+      "descricao": "Alisamento de Cabelo",
+      "categoriaNome": "Alisamento",
+      "categoriaId": 1,
+      "caminhoImage": "../assets/img/categoriaServico/servicos/alisamento-01.png",
       "avaliacao": 4.5
     },
     {
       "id": "2",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
-      "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
+      "descricao": "Corte de Cabelo",
+      "categoriaNome": "Corte",
+      "categoriaId": 2,
+      "caminhoImage": "../assets/img/categoriaServico/servicos/cortes_01.jpg",
       "avaliacao": 2
     },
     {
       "id": "3",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
+      "descricao": "Escova de Cabelo",
+      "categoriaNome": "Escova",
+      "categoriaId": 3,
       "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
       "avaliacao": 5
     },
     {
       "id": "4",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
-      "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
+      "descricao": "Tintura de Cabelo",
+      "categoriaNome": "Tintura",
+      "categoriaId": 6,
+      "caminhoImage": "../assets/img/categoriaServico/servicos/tintura_01.jpg",
       "avaliacao": 4
     },
     {
       "id": "5",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
-      "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
+      "descricao": "Manicure",
+      "categoriaNome": "Manicure",
+      "categoriaId": 4,
+      "caminhoImage": "../assets/img/categoriaServico/servicos/manicurePerdicure.jpg",
       "avaliacao": 5
     },
     {
-      "id": "6",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
-      "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
-      "avaliacao": 4.5
-    },
-    {
-      "id": "7",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
-      "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
-      "avaliacao": 4.5
-    },
-    {
-      "id": "8",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
-      "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
-      "avaliacao": 4.5
-    },
-    {
-      "id": "9",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
-      "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
-      "avaliacao": 4.5
-    },
-    {
-      "id": "10",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
-      "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
-      "avaliacao": 4.5
-    },
-    {
-      "id": "11",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
-      "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
-      "avaliacao": 4.5
-    },
-    {
-      "id": "12",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
-      "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
-      "avaliacao": 4.5
-    },
-    {
-      "id": "13",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
-      "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
-      "avaliacao": 4.5
-    },
-    {
-      "id": "14",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
-      "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
-      "avaliacao": 4.5
-    },
-    {
-      "id": "15",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
-      "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
-      "avaliacao": 4.5
-    },
-    {
-      "id": "16",
-      "descricao": "Alisamento de cabelo crespo",
-      "categoriaServicoNome": "Alisamento",
-      "quantidade": 1,
-      "valorUnitario": 250.05,
-      "valorTotal": 250.05,
-      "caminhoImage": "../assets/img/categoriaServico/servicos/escovas_01.jpg",
-      "avaliacao": 4.5
+      "id": "5",
+      "descricao": "Perdicure",
+      "categoriaNome": "Perdicure",
+      "categoriaId": 5,
+      "caminhoImage": "../assets/img/categoriaServico/servicos/manicurePerdicure.jpg",
+      "avaliacao": 5
     }
   ],
-  "categoriaServico": [
+  "servico": [
     {
       "id": "1",
       "caminhoImage": "../assets/img/categoriaServico/cortes/corte-simples_01.jpg",
-      "nome": "Corte masculino simples",
-      "descricao": "Corte masculino com uso de maquina de corta e tesoura",
-      "valor": 50,
-      "servicoId": "1"
+      "nome": "Corte Masculino com máquina",
+      "indicacao": "Todos os tipos de cabelos.",
+      "descricao": "No processo do corte é utilizado máquina de cortar cabelo no auxilio, geralmente é usado em cortes para deixar o cabelo ou parte curta.",
+      "preco": 50,
+      "tipoServicoId": "2"
     },
     {
       "id": "2",
       "caminhoImage": "../assets/img/categoriaServico/cortes/corte-tesoura_02.png",
-      "nome": "Corte masculino somente uso de tesoura",
-      "descricao": "Corte masculino com uso somente de tesoura",
-      "valor": 60,
-      "servicoId": "1"
+      "nome": "Corte Masculino sem uso de máquina",
+      "indicacao": "Todos os tipos de cabelos.",
+      "descricao": "No processo do corte é utilizado não é utilizado máquina de cortar cabelo, nesse caso uso da tesoura é exclusiva, geralmente para cortes que necessita mais apurado.",
+      "preco": 60,
+      "tipoServicoId": "2"
     },
     {
       "id": "3",
-      "caminhoImage": "../assets/img/categoriaServico/escovas/escova-simples_01.jpg",
-      "nome": "Escova simples",
-      "descricao": "Escova indicado para cabelos simples",
-      "valor": 180,
-      "servicoId": "1"
+      "caminhoImage": "../assets/img/categoriaServico/alisamentos/alisamento_atomico_01.jpg",
+      "nome": "Alisamento fotônico",
+      "indicacao": "Todos os tipos de cabelos.",
+      "descricao": "Resultado: Os ondulados ficam lisos e com balanço. Os crespos e armados perdem volume.Princípio ativo: A escova fotônica possui hidróxido de amônia ou tioglicolato.Etapas do tratamento: Após a lavagem com xampu de limpeza profunda, o produto é aplicado nos fios. A luz fotônica, de cor azul, potencializa a absorção do princípio ativo. “Ao contrário das outras técnicas, este alisamento não altera a estrutura interna do fio”, explica Guilherme. Durante o processo, é feita uma nanoqueratinização, que repõe queratina e reconstrói a fibra capilar, deixando o cabelo brilhante e macio.Duração: O efeito é definitivo, e só precisa fazer retoque de raiz a cada quatro meses.",
+      "preco": 360.5,
+      "tipoServicoId": "1"
+    },
+    {
+      "id": "4",
+      "caminhoImage": "../assets/img/categoriaServico/alisamentos/relaxamento_01.jpg",
+      "nome": "Relaxamento",
+      "indicacao": "Cabelos armados, crespos e com frizz. É recomendado, principalmente, para quem tem cabelo afro ou volumoso",
+      "descricao": "Resultado: Os crespos e armados ficam com cachos mais soltos e bem definidos, além do volume reduzido. Os ondulados ficam lisos.Princípio ativo: Pode ser o tioglicolato de amônia, o hidróxido de guanidina ou de sódio.Etapas do tratamento: É semelhante ao alisamento, mas é um processo menos agressivo aos fios. O relaxamento resulta numa aparência mais natural. O cabelo é lavado com xampu antirresíduos e, em seguida, aplica-se o produto nos fios, mecha por mecha. Depois do tempo de pausa o cabelo é enxaguado e lavado com xampu neutralizante. Por fim, é só secar.Duração: O efeito dura de seis a oito meses. Mas, conforme o crescimento dos fios, pode-se retocar a raiz.",
+      "preco": 560,
+      "tipoServicoId": "1"
+    },
+    {
+      "id": "5",
+      "caminhoImage": "../assets/img/categoriaServico/escovas/progressiva_01.jpg",
+      "nome": "Escova progressiva",
+      "indicacao": "Todos os tipos de cabelos.",
+      "descricao": "Resultado: Alisa os fios ondulados,já os crespos e armados perdem volume,princípio ativo: “Em geral ela tem formol, mas na quantidade permitida pela Anvisa”, diz Guilherme Andrade, da empresa Soft Hair Cosméticos.Etapas do tratamento: Os fios são lavados com xampu de limpeza profunda e aplica-se o produto, mecha por mecha. Em seguida é feita a escova e o cabelo é pranchado, para selar as cutículas e garantir a absorção dos princípios ativos. Aguarde três dias para lavar os fios.Duração: A escova é feita de modo gradual. Ou seja, a cada vez que você realiza o tratamento, mais lisos ficam os fios. Os efeitos dela duram, em média, três meses.",
+      "preco": 340.4,
+      "tipoServicoId": "3"
+    },
+    {
+      "id": "6",
+      "caminhoImage": "../assets/img/categoriaServico/escovas/definitiva_01.jpg",
+      "nome": "Escova definitiva",
+      "indicacao": "Fios naturais ou alisados",
+      "descricao": "Resultado: Cabelo extremamente liso, sem balanço natural.Princípio ativo: “Leva tioglicolato ou hidróxido de amônia”, explica Eduardo Martinez, técnico capilar da Star Active Cosméticos.Etapas do tratamento: Depois de lavar com xampu de limpeza profunda e aplicar o produto alisante, o cabelo é pranchado com a chapinha aquecida a 200ºC, mecha por mecha. Isso realinha a fibra do fio, deixando-o ultraliso.Duração: O resultado é permanente. Para tirar o efeito da escova, só cortando o cabelo. “É preciso fazer o retoque na raiz, conforme o cabelo for crescendo. Assim, não ficará diferente do resto”, lembra Eduardo.",
+      "preco": 240.4,
+      "tipoServicoId": "3"
+    }
+  ],
+  "categoriaServico": [
+    {
+      "id": 1,
+      "nome": "Alisamento",
+      "valor": 250.5
+    },
+    {
+      "id": 2,
+      "nome": "Corte",
+      "valor": 60
+    },
+    {
+      "id": 3,
+      "nome": "Escova",
+      "valor": 180
+    },
+    {
+      "id": 4,
+      "nome": "Manicure",
+      "valor": 60
+    },
+    {
+      "id": 5,
+      "nome": "Perdicure",
+      "valor": 80
+    },
+    {
+      "id": 6,
+      "nome": "Tintura",
+      "valor": 280
     }
   ],
   "reviewsServico": [

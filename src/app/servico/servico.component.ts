@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicoComponenteService } from './servico/servico-componente.service';
-import { ServicoModel } from './model/servico.model';
+import { ServicoItemModel } from './servico-item/model/servico-item.model';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+
 
 @Component({
   selector: 'app-servico',
@@ -8,13 +11,14 @@ import { ServicoModel } from './model/servico.model';
   styleUrls: ['./servico.component.css']
 })
 export class ServicoComponent implements OnInit {
-  servicoModel:ServicoModel[];
-  
-  constructor(private servicoComponenteService:ServicoComponenteService) {
-    this.servicoComponenteService.servicos().subscribe(servico => this.servicoModel = servico);    
-   }
+ 
+  servicoModel:ServicoItemModel;
+  constructor(private servicoComponenteService:ServicoComponenteService,private route:ActivatedRoute) { }
 
   ngOnInit() {
+    this.servicoComponenteService.servicoById(this.route.snapshot.params['id'])
+    .subscribe(servicoModel => this.servicoModel = servicoModel);
   }
+ 
 
 }

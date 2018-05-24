@@ -21,6 +21,8 @@ import { ServicoCreateComponent } from './servico/servico-create/servico-create.
 import { ServicoDetalheComponent } from './servico/servico-detalhe/servico-detalhe.component';
 import { CategoriaDetalheComponent } from './categoria-detalhe/categoria-detalhe.component';
 import { CategoriaServicoComponent } from './categoria-detalhe/categoria-servico/categoria-servico.component';
+import { ServicoCreateItemComponent } from './servico/servico-create-item/servico-create-item.component';
+import { OrdemPagamentoComponent } from './ordem-pagamento/ordem-pagamento.component';
 export const ROUTES: Routes =[
     {path: '',component:HomeComponent},
     {path:'categoria', component:CategoriaComponent, children:[
@@ -47,11 +49,12 @@ export const ROUTES: Routes =[
         {path:'index',component:ServicoIndexComponent},
         {path:'create',component:ServicoCreateComponent}
       ]},
-    {path:'servico/:id',component:CategoriaDetalheComponent, 
+    {path:'tipo-servico/:id',component:ServicoComponent, 
         children:[
-            {path:'',redirectTo:'categoria-servico', pathMatch: 'full'},
-            {path:'categoria-servico',component:CategoriaServicoComponent},
+            {path:'',redirectTo:'servico', pathMatch: 'full'},
+            {path:'servico',component:ServicoCreateItemComponent},
             {path:'reviewsServico',component:ServicoCreateComponent}
         ]
-    }
+    },
+    {path: 'ordem-pagamento', component: OrdemPagamentoComponent},
 ];

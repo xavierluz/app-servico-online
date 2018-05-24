@@ -1,10 +1,10 @@
-import { CategoriaServicoModel } from "../../categoria/model/categoria-servico.model";
+import { ServicoItemModel } from "../../servico/servico-item/model/servico-item.model";
 
 export class CompraItem{
-    constructor(public categoriaServicoModel:CategoriaServicoModel,public quantidade:number = 1){
+    constructor(public servicoItemModel:ServicoItemModel,public quantidade:number = 1){
 
     }
     valor():number{
-        return this.categoriaServicoModel.valor * this.quantidade;
+        return this.servicoItemModel.preco * this.quantidade;
     }
 }

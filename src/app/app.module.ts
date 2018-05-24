@@ -51,6 +51,10 @@ import { CompraService } from './compra/servico/compra.service';
 import { CategoriaDetalheComponent } from './categoria-detalhe/categoria-detalhe.component';
 import { CategoriaServicoComponent } from './categoria-detalhe/categoria-servico/categoria-servico.component';
 import { CategoriaServicoItemComponent } from './categoria-detalhe/categoria-servico-item/categoria-servico-item.component';
+import { TipoServicoModelComponent } from './tipo-servico/model/tipo-servico-model/tipo-servico-model.component';
+import { ServicoItemComponent } from './servico/servico-item/servico-item.component';
+import { ServicoCreateItemComponent } from './servico/servico-create-item/servico-create-item.component';
+import { OrdemPagamentoComponent } from './ordem-pagamento/ordem-pagamento.component';
 @NgModule({ 
   declarations: [
     AppComponent,
@@ -87,7 +91,11 @@ import { CategoriaServicoItemComponent } from './categoria-detalhe/categoria-ser
     CategoriaServicoComponent,
     CategoriaServicoItemComponent,
     CompraComponent,
-    CategoriaDetalheComponent
+    CategoriaDetalheComponent,
+    TipoServicoModelComponent,
+    ServicoItemComponent,
+    ServicoCreateItemComponent,
+    OrdemPagamentoComponent
 
   ],
   imports: [

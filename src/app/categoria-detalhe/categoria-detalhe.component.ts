@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicoModel } from '../servico/model/servico.model';
 import { ServicoComponenteService } from '../servico/servico/servico-componente.service';
 import { ActivatedRoute } from '@angular/router';
+import { ServicoItemModel } from '../servico/servico-item/model/servico-item.model';
 
 @Component({
   selector: 'app-categoria-detalhe',
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CategoriaDetalheComponent implements OnInit {
 
-  servicoModel:ServicoModel;
+  servicoModel:ServicoItemModel;
 
   constructor(private servicoComponentService:ServicoComponenteService,private router:ActivatedRoute) { 
   
