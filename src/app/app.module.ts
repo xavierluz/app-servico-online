@@ -55,6 +55,7 @@ import { TipoServicoModelComponent } from './tipo-servico/model/tipo-servico-mod
 import { ServicoItemComponent } from './servico/servico-item/servico-item.component';
 import { ServicoCreateItemComponent } from './servico/servico-create-item/servico-create-item.component';
 import { OrdemPagamentoComponent } from './ordem-pagamento/ordem-pagamento.component';
+import { InputComponent } from './shared/input/input.component';
 @NgModule({ 
   declarations: [
     AppComponent,
@@ -95,7 +96,8 @@ import { OrdemPagamentoComponent } from './ordem-pagamento/ordem-pagamento.compo
     TipoServicoModelComponent,
     ServicoItemComponent,
     ServicoCreateItemComponent,
-    OrdemPagamentoComponent
+    OrdemPagamentoComponent,
+    InputComponent
 
   ],
   imports: [
