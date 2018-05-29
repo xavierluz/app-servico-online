@@ -24,4 +24,10 @@ export class InputComponent implements OnInit, AfterContentInit {
     }
 
   }
+  hasSucess():string{
+    return this.input.valid && (this.input.dirty || this.input.touched);
+  }
+  hasError():string{
+    return this.input.invalid && (this.input.dirty || this.input.touched);
+  }
 }

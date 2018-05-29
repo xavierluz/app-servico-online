@@ -56,6 +56,7 @@ import { ServicoItemComponent } from './servico/servico-item/servico-item.compon
 import { ServicoCreateItemComponent } from './servico/servico-create-item/servico-create-item.component';
 import { OrdemPagamentoComponent } from './ordem-pagamento/ordem-pagamento.component';
 import { InputComponent } from './shared/input/input.component';
+import { RadioComponent } from './shared/radio/radio.component';
 @NgModule({ 
   declarations: [
     AppComponent,
@@ -97,7 +98,8 @@ import { InputComponent } from './shared/input/input.component';
     ServicoItemComponent,
     ServicoCreateItemComponent,
     OrdemPagamentoComponent,
-    InputComponent
+    InputComponent,
+    RadioComponent
 
   ],
   imports: [
