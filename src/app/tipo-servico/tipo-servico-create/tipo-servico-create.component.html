@@ -1,3 +1,55 @@
-<p>
-  tipo-servico-create works!
-</p>
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <section class="content-header">
+      </section>
+
+      <section class="content">
+        <section class="invoice">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-xs-12">
+                <h2 class="page-header">
+                  <i class="fa fa-shopping-cart"></i> Cadastrar Tipo de Serviço
+                </h2>
+              </div>
+            </div>
+
+            <div class="row invoice-info">
+              <div class="col-sm-6 col-xs-6">
+                <app-input-container erroMensage="Nome é obrigatório e minímo de 5 caracteres." label="Nome">
+                  <input type="text" id="Nome" formControlName="Nome" placeholder="Nome para o tipo de serviço(categoria)" class="form-control">
+                </app-input-container>
+              </div>
+              <div class="col-sm-6 col-xs-6">
+                <input type="file" id="imagem" (change)="handleFileInput($event.target.files)">
+                <br/>
+                <span style="font-weight:bold;color:green;" *ngIf="progress > 0 && progress < 100">
+                  {{progress}}%
+                </span>
+
+                <span style="font-weight:bold;color:green;" *ngIf="message">
+                  {{message}}
+                </span>
+              </div>
+              <div class="col-sm-12 col-xs-12">
+                  <app-input-container erroMensage="Descrição é de no minímo de 5 caracteres." label="descricaoServico">
+                <textarea id="descricaoServico" formControlName="descricaoServico" rows="5" cols="3" placeholder="Descrição do tipo de serviço"
+                  class="form-control"></textarea>
+                </app-input-container>
+              </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-xs-12">
+                  <button type="submit" [disabled]="form.invalid" class="btn btn-success pull-right">
+                      <i class="fa fa-spinner fa-spin fa-fw"></i> Salvar
+                  </button>
+                </div>
+              </div>
+          </form>
+        </section>
+      </section>
+    </div>
+  </section>
+</div>

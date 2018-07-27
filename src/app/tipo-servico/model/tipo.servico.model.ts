@@ -1,8 +1,19 @@
-export interface TipoServicoModel{
-  id:string;
-  descricao: string;
-  categoriaNome: string;
-  categoriaId: number;
-  caminhoImage:string;
-  avaliacao: number;
+interface TipoServicoModel{
+  Id:string;
+  Nome: string;
+  Descricao: string;
+  caminhoDaImage:string;
+  Status:string;
+  fileToUpload: File;
 }
+
+class TipoServico implements TipoServicoModel{
+  Id: string;  
+  Nome: string;
+  Descricao: string;
+  caminhoDaImage: string;
+  Status: string;
+  fileToUpload: File;
+}
+
+export {TipoServicoModel,TipoServico}

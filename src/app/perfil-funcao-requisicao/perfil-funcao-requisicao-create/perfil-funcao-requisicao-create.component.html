@@ -1,0 +1,53 @@
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <section class="content-header">
+      </section>
+
+      <section class="content">
+        <section class="invoice">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-xs-12">
+                <h2 class="page-header">
+                  <i class="fa fa-shopping-cart"></i> Cadastrar uma requisição para a função
+                </h2>
+              </div>
+            </div>
+
+            <div class="row invoice-info">
+              <div class="form-group">
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                  <app-input-container erroMensage="Tipo da requisição é obrigatório!" label="Name">
+                    <select id="Type" formControlName="Type" class="form-control">
+                      <option *ngFor="let type of Types" [ngValue]="type.Valor">{{ type.Nome }}</option>
+                    </select>
+                  </app-input-container>
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-12">
+                  <app-input-container erroMensage="Valor da requisição é obrigatório!" validoMensage="Valor preenchido" label="Name">
+                    <input type="text" id="Value" formControlName="Value" maxlength="200" placeholder="Preencher o valor para a requisição" class="form-control">
+                  </app-input-container>
+                </div>
+                
+                
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12">
+                <button type="button" [routerLink]="['/perfil-funcao-requisicao']" routerLinkActive="active" class="btn btn-success pull-left">
+                  <i class="fa fa-undo"></i> Retornar
+                </button>
+                <button type="submit" [disabled]="form.invalid" class="btn btn-success pull-right">
+                  <i class="fa fa-spinner fa-spin fa-fw"></i> Salvar
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </section>
+    </div>
+  </section>
+</div>

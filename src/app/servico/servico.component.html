@@ -1,57 +1,47 @@
 <!-- INÍCIO DO CONTEÚDO -->
 <section class="content-header">
-  <h1>
-
-  </h1>
+    <h3>
+        <a class="pull-left" [routerLink]="['/tipo-servico']" routerLinkActive="active"><i class="fa fa-sticky-note-o"></i>Serviços</a>
+    </h3>
 </section>
 
 
 <section class="content">
 
-  <div class="row">
-      <div class="col-xs-12">
-        <div class="box box-solid">
-          <div class="box-header with-border">
-            <i class="fa fa-home"></i>
+    <div class="row">
+        <div class="pad margin no-print">
+            <div [ngClass]="[tipoServico?.nome=='Escova' ? 'callout callout-servico-escova' 
+                            : tipoServico?.nome=='Manicure' ? 'callout callout-servico-manicure' 
+                            : tipoServico?.nome=='Perdicure' ? 'callout callout-servico-perdicure'  
+                            : tipoServico?.nome=='Tintura' ?  'callout callout-servico-tintura' 
+                            : tipoServico?.nome=='Corte' ? 'callout bg-orange' : 'callout callout-servico-alisamento'
+                            ]" style="margin-bottom: 0!important;">
+                <span class="pull-right">
+                    <i class="fa fa-star"></i></span>
+                <h4>
+                    Descrição do serviço
+                </h4>
 
-            <h3 class="box-title">{{servicoModel?.nome}}</h3><span class="pull-right"><i class="fa fa-star"></i>{{servicoModel?.avaliacao}}</span>
-          </div>
-          <!-- /.box-header -->
-          <div class="box-body">
-            <div class="col-sm-2 col-xs-12" *ngIf="servicoModel">
-              <img class="box-img-detail" [src]="servicoModel?.caminhoImage" />
             </div>
-            <div class="col-sm-2 col-xs-12">
-              &nbsp;
+
+        </div>
+        <section class="invoice">
+            <!-- title row -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="page-header">
+                        Tipo de serviços prestado(s): <b>{{tipoServico?.nome}}</b>
+                        <small class="pull-right">{{getDateNowFormatdddMMyyy()}}</small>
+                    </h3>
+                </div>
             </div>
-            <dl class="col-sm-8 col-xs-12">
-              <dt>Categoria</dt>
-              <dd>{{servicoModel?.categoriaServicoNome}}</dd>
-              <dt>Descrição do serviço</dt>
-              <dd>{{servicoModel?.descricao}}</dd>
-            </dl>
-          </div>
-          <!-- /.box-body -->
-          <div class="box-footer detail-footer">
-          <a class="pull-left"  routerLinkActive="detail-active" [routerLink]="['/tipo-servico']">
-             Serviços
-          </a>
-          <a class="pull-right" routerLinkActive="detail-active" [routerLink]="['reviews']">
-             Avaliações
-          </a>
-        </div>
-        </div>
-      </div>
-      <!-- /.col-xs-12 -->
-
-  </div>
-
-
-  <div class="row">
-      <!--INÍCIO DO MENU -->
-     <router-outlet></router-outlet>
-    <!-- FIM DO MENU -->
-</div>
-
+            <div class="row invoice-info">
+                <!--INÍCIO DO MENU -->
+                <router-outlet></router-outlet>
+                <!-- FIM DO MENU -->
+            </div>
+        </section>
+    </div>
+    <app-snackbar></app-snackbar>
 </section>
 <!-- FIM DO CONTEÚDO -->

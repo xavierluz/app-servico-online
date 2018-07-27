@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,LOCALE_ID  } from '@angular/core';
 import { FormsModule,ReactiveFormsModule  }   from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpModule} from '@angular/http';
-import {RouterModule} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import {RouterModule, PreloadAllModules} from '@angular/router';
 import {ROUTES} from './app.routes';
 import { DataTablesModule } from 'angular-datatables';
 import { CurrencyMaskModule } from "ng2-currency-mask";
-
+import { FileUploadModule } from "angular-file-uploader";
 import { AppComponent } from './app.component';
 import { HeaderOnlineComponent } from './header-online/header-online.component';
 import { SideBarMenuOnlineComponent } from './side-bar-menu-online/side-bar-menu-online.component';
@@ -20,43 +22,52 @@ import { CategoriaIndexComponent } from './categoria/index/index.component';
 import { ClassificacaoComponent } from './classificacao/classificacao.component';
 import { ClassificacaoIndexComponent } from './classificacao/index/index.component';
 import {ClassificacaoCreateComponent} from './classificacao/create/create.component';
-import {CategoriaService} from './categoria/servicos/categoria.service';
 import { ClienteComponent } from './cliente/cliente.component';
 import { ClienteIndexComponent } from './cliente/cliente-index/cliente-index.component';
 import { ClienteCreateComponent } from './cliente/cliente-create/cliente-create.component';
 import { ClienteContatoComponent } from './cliente/cliente-contato/cliente-contato.component';
-import {ClienteService} from './cliente/servico/cliente.service';
 import { ItemMaterialComponent } from './item-material/item-material.component';
 import { ItemMaterialIndexComponent } from './item-material/item-material-index/item-material-index.component';
 import { ItemMaterialCreateComponent } from './item-material/item-material-create/item-material-create.component';
-import { ItemMaterialService} from './item-material/servico/item.material.service';
 import { TipoServicoComponent } from './tipo-servico/tipo-servico.component';
 import { TipoServicoIndexComponent } from './tipo-servico/tipo-servico-index/tipo-servico-index.component';
 import { TipoServicoCreateComponent } from './tipo-servico/tipo-servico-create/tipo-servico-create.component';
-import { TipoServicoService} from './tipo-servico/servico/tipo.servico.service';
 import { ServicoComponent } from './servico/servico.component';
 import { ServicoIndexComponent } from './servico/servico-index/servico-index.component';
 import { ServicoCreateComponent } from './servico/servico-create/servico-create.component';
-import {ServicoService } from './servico/servico/servico.service';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2-multiselect-dropdown';
 import { DropdownComponent } from './dropdown/dropdown.component';
-import {PagerService} from './paginacao/pagina-service';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { PagamentoIndexComponent } from './pagamento/pagamento-index/pagamento-index.component';
 import { PagamentoCreateComponent } from './pagamento/pagamento-create/pagamento-create.component';
-import { ServicoComponenteService } from './servico/servico/servico-componente.service';
 import { ServicoDetalheComponent } from './servico/servico-detalhe/servico-detalhe.component';
 import { CompraComponent } from './compra/compra.component';
-import { CompraService } from './compra/servico/compra.service';
 import { CategoriaDetalheComponent } from './categoria-detalhe/categoria-detalhe.component';
 import { CategoriaServicoComponent } from './categoria-detalhe/categoria-servico/categoria-servico.component';
 import { CategoriaServicoItemComponent } from './categoria-detalhe/categoria-servico-item/categoria-servico-item.component';
 import { TipoServicoModelComponent } from './tipo-servico/model/tipo-servico-model/tipo-servico-model.component';
 import { ServicoItemComponent } from './servico/servico-item/servico-item.component';
 import { ServicoCreateItemComponent } from './servico/servico-create-item/servico-create-item.component';
-import { OrdemPagamentoComponent } from './ordem-pagamento/ordem-pagamento.component';
-import { InputComponent } from './shared/input/input.component';
-import { RadioComponent } from './shared/radio/radio.component';
+
+import { registerLocaleData } from '@angular/common';
+import localePt  from "./pt-PT";
+
+import { SharedModule } from './shared/shared.module';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { EmpresaComponent } from './empresa/empresa.component';
+import { EmpresaCreateComponent } from './empresa/empresa-create/empresa-create.component';
+import { EmpresaService } from './empresa/servico/empresa.service';
+import { EmpresaDetalheComponent } from './empresa/empresa-detalhe/empresa-detalhe.component';
+import { EmpresaEditarComponent } from './empresa/empresa-editar/empresa-editar.component';
+import { PerfilFuncaoComponent } from './perfil-funcao/perfil-funcao.component';
+import { PerfilFuncaoRequisicaoComponent } from './perfil-funcao-requisicao/perfil-funcao-requisicao.component';
+import { UsuarioRequisicaoComponent } from './usuario-requisicao/usuario-requisicao.component';
+import { PerfilFuncaoCreateComponent } from './perfil-funcao/perfil-funcao-create/perfil-funcao-create.component';
+import { PerfilFuncaoRequisicaoCreateComponent } from './perfil-funcao-requisicao/perfil-funcao-requisicao-create/perfil-funcao-requisicao-create.component';
+import { PerfilFuncaoServices } from './perfil-funcao/servico/perfil-funcao.services';
+import { PerfilFuncaoRequisicaoServices } from './perfil-funcao-requisicao/servico/perfil-funcao-requisicao.services';
+
+registerLocaleData(localePt,'pt-BR');
 @NgModule({ 
   declarations: [
     AppComponent,
@@ -97,21 +108,33 @@ import { RadioComponent } from './shared/radio/radio.component';
     TipoServicoModelComponent,
     ServicoItemComponent,
     ServicoCreateItemComponent,
-    OrdemPagamentoComponent,
-    InputComponent,
-    RadioComponent
-
+    UsuarioComponent,
+    EmpresaComponent,
+    EmpresaCreateComponent,
+    EmpresaDetalheComponent,
+    EmpresaEditarComponent,
+    PerfilFuncaoComponent,
+    PerfilFuncaoRequisicaoComponent,
+    UsuarioRequisicaoComponent,
+    PerfilFuncaoCreateComponent,
+    PerfilFuncaoRequisicaoCreateComponent,
+    
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
+    FileUploadModule,
+    HttpClientModule, 
+    SharedModule.forRoot(),
     DataTablesModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES),
+    RouterModule.forRoot(ROUTES,{preloadingStrategy:PreloadAllModules}),
     AngularMultiSelectModule,
     CurrencyMaskModule
   ],
-  providers: [CategoriaService,ClienteService,ItemMaterialService,TipoServicoService,ServicoService,PagerService,ServicoComponenteService,CompraService],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }, EmpresaService, ,
+    PerfilFuncaoServices, PerfilFuncaoRequisicaoServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

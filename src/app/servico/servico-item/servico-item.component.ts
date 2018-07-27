@@ -13,6 +13,7 @@ export class ServicoItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
   emitAddEvent(){

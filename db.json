@@ -189,7 +189,7 @@
       "avaliacao": 5
     },
     {
-      "id": "5",
+      "id": "6",
       "descricao": "Perdicure",
       "categoriaNome": "Perdicure",
       "categoriaId": 5,
@@ -205,7 +205,8 @@
       "indicacao": "Todos os tipos de cabelos.",
       "descricao": "No processo do corte é utilizado máquina de cortar cabelo no auxilio, geralmente é usado em cortes para deixar o cabelo ou parte curta.",
       "preco": 50,
-      "tipoServicoId": "2"
+      "tipoServicoId": "2",
+      "categoriaNome": "Corte"
     },
     {
       "id": "2",
@@ -214,7 +215,8 @@
       "indicacao": "Todos os tipos de cabelos.",
       "descricao": "No processo do corte é utilizado não é utilizado máquina de cortar cabelo, nesse caso uso da tesoura é exclusiva, geralmente para cortes que necessita mais apurado.",
       "preco": 60,
-      "tipoServicoId": "2"
+      "tipoServicoId": "2",
+      "categoriaNome": "Corte"
     },
     {
       "id": "3",
@@ -223,7 +225,8 @@
       "indicacao": "Todos os tipos de cabelos.",
       "descricao": "Resultado: Os ondulados ficam lisos e com balanço. Os crespos e armados perdem volume.Princípio ativo: A escova fotônica possui hidróxido de amônia ou tioglicolato.Etapas do tratamento: Após a lavagem com xampu de limpeza profunda, o produto é aplicado nos fios. A luz fotônica, de cor azul, potencializa a absorção do princípio ativo. “Ao contrário das outras técnicas, este alisamento não altera a estrutura interna do fio”, explica Guilherme. Durante o processo, é feita uma nanoqueratinização, que repõe queratina e reconstrói a fibra capilar, deixando o cabelo brilhante e macio.Duração: O efeito é definitivo, e só precisa fazer retoque de raiz a cada quatro meses.",
       "preco": 360.5,
-      "tipoServicoId": "1"
+      "tipoServicoId": "1",
+      "categoriaNome": "Alisamento"
     },
     {
       "id": "4",
@@ -232,7 +235,8 @@
       "indicacao": "Cabelos armados, crespos e com frizz. É recomendado, principalmente, para quem tem cabelo afro ou volumoso",
       "descricao": "Resultado: Os crespos e armados ficam com cachos mais soltos e bem definidos, além do volume reduzido. Os ondulados ficam lisos.Princípio ativo: Pode ser o tioglicolato de amônia, o hidróxido de guanidina ou de sódio.Etapas do tratamento: É semelhante ao alisamento, mas é um processo menos agressivo aos fios. O relaxamento resulta numa aparência mais natural. O cabelo é lavado com xampu antirresíduos e, em seguida, aplica-se o produto nos fios, mecha por mecha. Depois do tempo de pausa o cabelo é enxaguado e lavado com xampu neutralizante. Por fim, é só secar.Duração: O efeito dura de seis a oito meses. Mas, conforme o crescimento dos fios, pode-se retocar a raiz.",
       "preco": 560,
-      "tipoServicoId": "1"
+      "tipoServicoId": "1",
+      "categoriaNome": "Alisamento"
     },
     {
       "id": "5",
@@ -241,7 +245,8 @@
       "indicacao": "Todos os tipos de cabelos.",
       "descricao": "Resultado: Alisa os fios ondulados,já os crespos e armados perdem volume,princípio ativo: “Em geral ela tem formol, mas na quantidade permitida pela Anvisa”, diz Guilherme Andrade, da empresa Soft Hair Cosméticos.Etapas do tratamento: Os fios são lavados com xampu de limpeza profunda e aplica-se o produto, mecha por mecha. Em seguida é feita a escova e o cabelo é pranchado, para selar as cutículas e garantir a absorção dos princípios ativos. Aguarde três dias para lavar os fios.Duração: A escova é feita de modo gradual. Ou seja, a cada vez que você realiza o tratamento, mais lisos ficam os fios. Os efeitos dela duram, em média, três meses.",
       "preco": 340.4,
-      "tipoServicoId": "3"
+      "tipoServicoId": "3",
+      "categoriaNome": "Escova"
     },
     {
       "id": "6",
@@ -250,7 +255,8 @@
       "indicacao": "Fios naturais ou alisados",
       "descricao": "Resultado: Cabelo extremamente liso, sem balanço natural.Princípio ativo: “Leva tioglicolato ou hidróxido de amônia”, explica Eduardo Martinez, técnico capilar da Star Active Cosméticos.Etapas do tratamento: Depois de lavar com xampu de limpeza profunda e aplicar o produto alisante, o cabelo é pranchado com a chapinha aquecida a 200ºC, mecha por mecha. Isso realinha a fibra do fio, deixando-o ultraliso.Duração: O resultado é permanente. Para tirar o efeito da escova, só cortando o cabelo. “É preciso fazer o retoque na raiz, conforme o cabelo for crescendo. Assim, não ficará diferente do resto”, lembra Eduardo.",
       "preco": 240.4,
-      "tipoServicoId": "3"
+      "tipoServicoId": "3",
+      "categoriaNome": "Escova"
     }
   ],
   "categoriaServico": [
@@ -848,5 +854,356 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "ordens": [
+    {
+      "nome": "Celso xavier",
+      "telefone": "951214906",
+      "email": "xavierluz@gmail.com",
+      "paymentOption": "dinh",
+      "descricaoServico": "Teste",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "3"
+        },
+        {
+          "quantidade": 1,
+          "servicoId": "4"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "nome": "Xavier Luz",
+      "telefone": "95121479",
+      "email": "xavier@gmail.com",
+      "paymentOption": "dinh",
+      "descricaoServico": "Teste",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "3"
+        },
+        {
+          "quantidade": 2,
+          "servicoId": "4"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "nome": "Xavier Luz",
+      "telefone": "951214906",
+      "email": "xavier@gmail.com",
+      "paymentOption": "cheq",
+      "descricaoServico": "Teste",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "5"
+        },
+        {
+          "quantidade": 2,
+          "servicoId": "6"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "nome": "Celso Luz",
+      "telefone": "951214967",
+      "email": "xxxxx@gmail.com",
+      "paymentOption": "cheq",
+      "descricaoServico": "Teste",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "5"
+        },
+        {
+          "quantidade": 1,
+          "servicoId": "6"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "nome": "Celso Xavier",
+      "telefone": "11951214906",
+      "email": "xavierluz@gmail.com",
+      "descricaoServico": "Foram realizados procedimentos adequados.",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "3"
+        },
+        {
+          "quantidade": 1,
+          "servicoId": "4"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "nome": "Xavier Luz",
+      "telefone": "11951214906",
+      "email": "xavier@gmail.com",
+      "descricaoServico": "Foram realizados",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "5"
+        },
+        {
+          "quantidade": 1,
+          "servicoId": "6"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "nome": "xavier luZ",
+      "telefone": "11951214906",
+      "email": "xavierluz@gmail.com",
+      "descricaoServico": "testetetetet",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "1"
+        },
+        {
+          "quantidade": 1,
+          "servicoId": "2"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "nome": "xavier",
+      "telefone": "1578787",
+      "email": "xa@gmail.com",
+      "descricaoServico": "adddaddddadaad",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "3"
+        }
+      ],
+      "id": 8
+    },
+    {
+      "nome": "xavieee",
+      "telefone": "4574878",
+      "email": "xa@gmail.com",
+      "descricaoServico": "sfsfssfsffssfsfsfsf",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "1"
+        }
+      ],
+      "id": 9
+    },
+    {
+      "nome": "xxxxxxxxxaa",
+      "telefone": "455454",
+      "email": "xxx@gmail.com",
+      "descricaoServico": "fsfsfsfsfsfsfsfsfsfsffs",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "2"
+        }
+      ],
+      "id": 10
+    },
+    {
+      "nome": "daddadadaadda",
+      "telefone": "457887",
+      "email": "dddd@gmail.com",
+      "descricaoServico": "sfsfsfsfsfsfsfsfsfsfsfsf",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "5"
+        }
+      ],
+      "id": 11
+    },
+    {
+      "nome": "dasddadadada",
+      "telefone": "454544",
+      "email": "ddd@gmail.com",
+      "descricaoServico": "sffsfssfsfsfsfsfsf",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "3"
+        }
+      ],
+      "id": 12
+    },
+    {
+      "nome": "adaadadadadad",
+      "telefone": "44114",
+      "email": "xa@gmail.com",
+      "descricaoServico": "adasfsfsfsfsfsfsf",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "5"
+        }
+      ],
+      "id": 13
+    },
+    {
+      "nome": "daadadaddada",
+      "telefone": "877787",
+      "email": "xa@gmail.com",
+      "descricaoServico": "sQEEQeEeEeqEQ",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "6"
+        }
+      ],
+      "id": 14
+    },
+    {
+      "nome": "ssfsfsffsfs",
+      "telefone": "45787877",
+      "email": "xa@gmail.com",
+      "descricaoServico": "fsfsfsfsffssffs",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "3"
+        }
+      ],
+      "id": 15
+    },
+    {
+      "nome": "dddddaadda",
+      "telefone": "57887",
+      "email": "xa@gmail.com",
+      "descricaoServico": "adadadadadadda",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "2"
+        }
+      ],
+      "id": 16
+    },
+    {
+      "nome": "ddddadada",
+      "telefone": "77787",
+      "email": "da@gmail.com",
+      "descricaoServico": "ddadaaddadadadaad",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "3"
+        }
+      ],
+      "id": 17
+    },
+    {
+      "nome": "adadadda",
+      "telefone": "7878878",
+      "email": "xa@gmail.com",
+      "descricaoServico": "adadaddaaddaadda",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "3"
+        }
+      ],
+      "id": 18
+    },
+    {
+      "nome": "dddadadadad",
+      "telefone": "445457",
+      "email": "xa@gmail.com",
+      "descricaoServico": "adadadadadaadad",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "3"
+        }
+      ],
+      "id": 19
+    },
+    {
+      "nome": "dadaddaadda",
+      "telefone": "45454454",
+      "email": "xxa@gmail.com",
+      "descricaoServico": "adadadadadaddada",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "3"
+        }
+      ],
+      "id": 20
+    },
+    {
+      "nome": "addadadadada",
+      "telefone": "54454545",
+      "email": "xxxa@gmail.com",
+      "descricaoServico": "addadadadadada",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "3"
+        }
+      ],
+      "id": 21
+    },
+    {
+      "nome": "dadadadaaddada",
+      "telefone": "54454554",
+      "email": "sssa@gmail.com",
+      "descricaoServico": "addaadadadadadda",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "3"
+        }
+      ],
+      "id": 22
+    },
+    {
+      "nome": "adaddaadadad",
+      "telefone": "454445",
+      "email": "xxa@gmail.com",
+      "descricaoServico": "addadaadaddadada",
+      "paymentOption": "dinh",
+      "ordemItens": [
+        {
+          "quantidade": 1,
+          "servicoId": "3"
+        }
+      ],
+      "id": 23
+    }
+  ]
 }

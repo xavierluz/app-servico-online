@@ -1,11 +1,15 @@
-<div class="menu-item-info-box">
-  <span class="menu-item-info-box-icon"><img [src]="servicoItemModel?.caminhoImage"></span>
+<div>
+  <span class="menu-item-info-box-icon"><img [src]="servicoItemModel.tipoServicoCaminhoDaImage"></span>
 
   <div class="menu-item-info-box-content">
     <span class="menu-item-info-box-text">{{servicoItemModel.nome}}</span>
     <span class="menu-item-info-box-text">{{servicoItemModel.indicacao}}</span>
     <span class="menu-item-info-box-detail">{{servicoItemModel.descricao}}</span>
-    <span class="menu-item-info-box-price">{{servicoItemModel.preco | currency: 'BRL':true}}</span>
-    <a (click)="emitAddEvent()"  class=""><i class="fa fa-plus-circle"></i> Adicionar</a>
+    <p class="bg-cornsilk-2">
+        <span class="menu-item-info-box-price" >{{servicoItemModel.preco | currency: 'BRL':true}}</span>
+        <a (click)="emitAddEvent()"  class="fg-link-adiconar"><i class="fa fa-plus-circle"></i> Adicionar</a>
+    </p>
+ 
   </div>
 </div>
+<hr>

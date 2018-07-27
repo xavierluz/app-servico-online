@@ -96,4 +96,9 @@ body {
     font-weight: bold;
   }
 
-  
+  .content-wrapper{
+    margin-left: 0px !important;
+  }
+  .margin-top-text-area{
+    margin-top: 15px !important;
+  }

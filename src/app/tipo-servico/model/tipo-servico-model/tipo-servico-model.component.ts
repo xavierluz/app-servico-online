@@ -11,6 +11,7 @@ export class TipoServicoModelComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

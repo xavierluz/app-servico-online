@@ -1,0 +1,61 @@
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <section class="content-header">
+      </section>
+
+      <section class="content">
+        <section class="invoice">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-xs-12">
+                <h2 class="page-header">
+                  <i class="fa fa-shopping-cart"></i> Cadastrar Empresa
+                </h2>
+              </div>
+            </div>
+
+            <div class="row invoice-info">
+              <div class="form-group">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <app-input-container erroMensage="Cnpj/Cpf é obrigatório e válido!" label="CnpjCpf">
+                    <input type="text" id="CnpjCpf" formControlName="CnpjCpf" maxlength="15" placeholder="Preencher Cnpj/Cpf da empresa" class="form-control">
+                  </app-input-container>
+                </div>
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                  <app-input-container erroMensage="Email é obrigatório e válido!" label="Email">
+                    <input type="text" id="Email" formControlName="Email"  maxlength="100" placeholder="Preencher nome do email da empresa" class="form-control">
+                  </app-input-container>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-5 col-sm-5 col-xs-12">
+                  <app-input-container erroMensage="Nome é obrigatório e minímo de 5 caracteres." label="Nome">
+                    <input type="text" id="Nome" formControlName="Nome"  maxlength="50" placeholder="Preencher nome da empresa" class="form-control">
+                  </app-input-container>
+                </div>
+                <div class="col-md-7 col-sm-6 col-xs-12">
+                  <app-input-container erroMensage="Nome fântasia é de minímo de 5 caracteres." label="NomeFantasia">
+                    <input type="text" id="NomeFantasia" formControlName="NomeFantasia"  maxlength="150" placeholder="Preencher nome fântasia da empresa" class="form-control">
+                  </app-input-container>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12">
+                <button type="button" [routerLink]="['/empresa']" routerLinkActive="active" class="btn btn-success pull-left">
+                  <i class="fa fa-undo"></i> Retornar
+                </button>
+                <button type="submit" [disabled]="form.invalid" class="btn btn-success pull-right">
+                  <i class="fa fa-spinner fa-spin fa-fw"></i> Salvar
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </section>
+    </div>
+  </section>
+</div>

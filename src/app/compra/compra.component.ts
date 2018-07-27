@@ -11,6 +11,7 @@ export class CompraComponent implements OnInit {
   constructor(private compraService:CompraService) { }
 
   ngOnInit() {
+    this.clear();
   }
 
   itens():any[]{

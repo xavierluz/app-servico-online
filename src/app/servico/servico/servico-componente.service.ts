@@ -14,21 +14,21 @@ export class ServicoComponenteService{
     constructor(private http:Http){}
 
     servicos():Observable<ServicoItemModel[]>{
-      return this.http.get(`${MEAT_API}/tipoServico`).map(response => response.json()).catch(ErrorHandler.handleError);
+      return this.http.get(`${MEAT_API}/Servico`).map(response => response.json()).catch(ErrorHandler.handleError);
     }
     servicoById(id:number):Observable<ServicoItemModel>{
-      return this.http.get(`${MEAT_API}/tipoServico/${id}`)
-      .map(response => response.json())
+      return this.http.get(`${MEAT_API}/Servico/${id}`)
+      .map((response) => response.json())
       .catch(ErrorHandler.handleError);
     }
     reviewsOfServico(id:number):Observable<any>{
-      return this.http.get(`${MEAT_API}/tipoServico/${id}/reviewsServico`)
+      return this.http.get(`${MEAT_API}/Servico/${id}/reviewsServico`)
       .map(response => response.json())
       .catch(ErrorHandler.handleError);
     }
     categoriaServicoOfServico(id:number):Observable<ServicoItemModel[]>{
-      return this.http.get(`${MEAT_API}/tipoServico/${id}/servico`)
-      .map(response => response.json())
+      return this.http.get(`${MEAT_API}/Servico/${id}`)
+      .map((response) => response.json())
       .catch(ErrorHandler.handleError);
     }
 }

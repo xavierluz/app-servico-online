@@ -3,138 +3,89 @@
 
 <section class="content">
   <section class="invoice">
-
-        {{ form.valid}}
-        {{form.value | json}}
-
-        <form #form="ngForm" novalidate>
-          <div class="row">
-            <div class="col-xs-12">
-              <h2 class="page-header">
-                <i class="fa fa-shopping-cart"></i> Finalize
-              </h2>
-            </div>
-          </div>                
-
-          <div class="row invoice-info">
-            <div class="col-xs-12">
-              <p class="lead">Cliente:</p>
-            </div>
-            <div class="col-sm-5 col-xs-12"> 
-              <app-input-container erroMensage="Nome é obrigatório e com 5 caracteres." label="Nome">
-                <input type="text" name="nome" placeholder="Nome do cliente" class="form-control" ngModel required minlength="5" autocomplete="off">
-              </app-input-container>
-            </div>
-            <div class="col-sm-3 col-xs-6">
-              <app-input-container erroMensage="Telefone é obrigatório, permitido somente números" label="Telefone">
-                <input type="text" name="telefone" placeholder="Telefone do cliente" pattern="^[0-9]*$" class="form-control" ngModel required minlength="5" autocomplete="off">
-              </app-input-container>
-            </div>
-            <div class="col-sm-4 col-xs-6">
-                <app-input-container erroMensage="Campo obrigatório e com 5 caracteres." label="E-Mail">
-                  <input type="text" name="email" placeholder="E-Mail do cliente"  class="form-control" ngModel autocomplete="off">
-                </app-input-container>
-            </div>
-            <!-- /.col -->
-          </div>
-          <!-- /.row -->
-
-          <!-- Table row -->
-          <div class="row">
-            <div class="col-xs-12">
-              <p class="lead">Itens do Pedido:</p>
-            </div>
-            <div class="col-xs-12 table-responsive">
-
-              <table class="table table-striped">
-                <thead>
-                <tr>
-                  <th class="text-center">Quantidade</th>
-                  <th>Item</th>
-                  <th>Descrição</th>
-                  <th class="text-right">Subtotal</th>
-                  <th class="text-right"></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td class="text-center">
-                    <a class="btn btn-sm"><i class="fa fa-minus"></i></a>
-                    1
-                    <a class="btn btn-sm"><i class="fa fa-plus"></i></a>
-                  </td>
-                  <td>Cup Cake</td>
-
-                  <td>Recheado com doce de leite</td>
-                  <td class="text-right">R$ 10,00</td>
-                  <td class="text-right">
-                    <a class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-center">
-                    <a class="btn btn-sm"><i class="fa fa-minus"></i></a>
-                    1
-                    <a class="btn btn-sm"><i class="fa fa-plus"></i></a>
-                  </td>
-                  <td>Croissant</td>
-
-                  <td>Recheado com presunto e queijo</td>
-                  <td class="text-right">R$ 10,00</td>
-                  <td class="text-right">
-                    <a class="btn btn-sm danger "><i class="fa fa-remove"></i></a>
-                  </td>
-                </tr>
-
-                </tbody>
-              </table>
-            </div>
-            <!-- /.col -->
-          </div>
-          <!-- /.row -->
-
-          <div class="row">
-            <!-- accepted payments column -->
-            <div class="col-sm-6 col-xs-12">
-              <p class="lead">Formas de Pagamento:</p>
-
-                <div class="form-group">
-                   <app-radio [options]="paymentOptions" name="paymentOption" ngModel></app-radio>
-                </div>
-
-            </div>
-            <!-- /.col -->
-            <div class="col-sm-6 col-xs-12">
-              <p class="lead">Frete e Total:</p>
-
-              <div class="table-responsive">
-                <table class="table">
-                  <tbody><tr>
-                    <th style="width:50%">Itens:</th>
-                    <td class="text-right">R$ 20,00</td>
-                  </tr>
-                  <tr>
-                    <th>Frete:</th>
-                    <td class="text-right">R$ 8,00</td>
-                  </tr>
-                  <tr>
-                    <th>Total:</th>
-                    <td class="text-right">R$ 28,00</td>
-                  </tr>
-                </tbody></table>
-              </div>
-            </div>
-            <!-- /.col -->
-          </div>
-
-        </form>
-
-        <div class="row">
-          <div class="col-xs-12">
-            <button type="button" [disabled] ="! form.valid" href="order-summary.html" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Concluir Pedido
-            </button>
-          </div>
+    <form #form="ngForm" novalidate>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="page-header">
+            <i class="fa fa-shopping-cart"></i> Finalizar
+          </h2>
         </div>
+      </div>
 
-    </section>
+      <div class="row invoice-info">
+        <div class="col-xs-12">
+          <p class="lead">Cliente:</p>
+        </div>
+        <div class="col-sm-5 col-xs-12">
+          <app-input-container erroMensage="Nome é obrigatório e minímo de 5 caracteres." label="Nome">
+            <input type="text" name="nome" placeholder="Nome do cliente" class="form-control" ngModel required minlength="5" autocomplete="off">
+          </app-input-container>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <app-input-container erroMensage="Telefone é obrigatório, permitido somente números" label="Telefone">
+            <input type="text" name="telefone" placeholder="Telefone do cliente" pattern="^[0-9]*$" class="form-control" ngModel required
+              minlength="5" autocomplete="off">
+          </app-input-container>
+        </div>
+        <div class="col-sm-4 col-xs-6">
+          <app-input-container erroMensage="Por favor digite um e-mail válido!" label="E-Mail">
+            <input type="text" name="email" placeholder="E-Mail do cliente" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" class="form-control" ngModel autocomplete="off">
+          </app-input-container>
+        </div>
+        <!-- /.col -->
+      </div>
+      <div class="row invoice-info">
+          <div class="col-sm-12 col-xs-12">
+              <app-input-container erroMensage="Descrição é obrigatório e minímo de 5 caracteres." label="Descrição">
+                <textarea name="descricao" rows="5" cols="3" placeholder="Descrição do serviço realizado" class="form-control" ngModel required minlength="5" autocomplete="off"></textarea>
+              </app-input-container>
+            </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <!-- Table row -->
+      <div class="row">
+        <div class="col-xs-12">
+          <p class="lead">Itens do Pedido:</p>
+        </div>
+        <app-ordem-itens [itens]="compraItens()" (incrimentaQuantidade)="incrimentaQuantidade($event)" (descrementaQuantidade)="descrementaQuantidade($event)"
+          (remover)="remover($event)">
+
+        </app-ordem-itens>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <!-- accepted payments column -->
+        <div class="col-sm-6 col-xs-12">
+          <p class="lead">Formas de Pagamento:</p>
+
+          <div class="form-group">
+            <app-radio [options]="paymentOptions" name="formaPagamento" ngModel required></app-radio>
+          </div>
+
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6 col-xs-12">
+          <p class="lead">Frete e Total:</p>
+
+          <app-ordem-fechamento [valorItens]="valorItens()"></app-ordem-fechamento>
+        </div>
+        <!-- /.col -->
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <button (click)="createOrdem(form.value)" type="button" [disabled]="! form.valid || compraItens().length === 0" href="order-summary.html"
+            class="btn btn-success pull-right">
+            <i class="fa fa-credit-card"></i> Concluir Ordem Serviço
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
 </section>

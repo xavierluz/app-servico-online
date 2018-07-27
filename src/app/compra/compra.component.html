@@ -14,7 +14,11 @@
         <table class="table">
           <tbody>
          
-          <tr *ngFor="let item of itens()">
+          <tr *ngFor="let item of itens()"  [ngClass]=" [item.servicoItemModel?.categoriaNome=='Escova' ? 'bg-green' 
+                                                        : item.servicoItemModel?.categoriaNome=='Manicure' ? 'bg-blue' 
+                                                        : item.servicoItemModel?.categoriaNome=='Perdicure' ? 'bg-light-blue'  
+                                                        : item.servicoItemModel?.categoriaNome=='Tintura' ?  'bg-yellow' 
+                                                        : item.servicoItemModel?.categoriaNome=='Corte' ? 'bg-orange' : 'bg-red']">
             <th>({{item.quantidade}}x) {{item.servicoItemModel.nome}}</th>
 
             <td class="text-right">{{item.valor() | currency: 'BRL' : true}}</td>

@@ -4,16 +4,14 @@
   <section class="content-header">
      <ol class="breadcrumb">
       <li><a [routerLink]="''" routerLinkActive="active"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li *ngFor="let tituloModel of _tituloModulo" class="active">
-        {{tituloModel.Titulo}}
-      </li>
+    
     </ol>
   </section>
 
   <!-- Main content -->
       
   <router-outlet></router-outlet>
-    
+
 </div>
 <app-control-side-bar-online></app-control-side-bar-online>
 <app-footer></app-footer>

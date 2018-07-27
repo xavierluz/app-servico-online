@@ -1,3 +1,4 @@
+
 export interface ServicoItemModel{
     id:string;
     nome:string;
@@ -5,4 +6,7 @@ export interface ServicoItemModel{
     descricao:string;
     preco:number;
     caminhoImage:string;
+    tipoServicoDominioId:number;
+    tipoServicoNome:string;
+    tipoServicoCaminhoDaImage:string;
 }
