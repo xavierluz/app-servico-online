@@ -38,7 +38,7 @@ export class EmpresaCreateComponent implements OnInit {
 
     this.empresaService.createEmpresa(empresaModel).subscribe((empresaId:string) =>{
       this.empresaId = empresaId
-      this.router.navigate(['/empresa',{empresaId:this.empresaId}])
+      this.router.navigate(['/usuario-create',this.empresaId])
     });
     
   }

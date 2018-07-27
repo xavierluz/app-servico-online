@@ -29,6 +29,7 @@ import { PerfilFuncaoRequisicaoCreateComponent } from './perfil-funcao-requisica
 import { PerfilFuncaoCreateComponent } from './perfil-funcao/perfil-funcao-create/perfil-funcao-create.component';
 import { PerfilFuncaoComponent } from './perfil-funcao/perfil-funcao.component';
 import { PerfilFuncaoRequisicaoComponent } from './perfil-funcao-requisicao/perfil-funcao-requisicao.component';
+import { UsuarioCreateComponent } from './usuario/usuario-create/usuario-create.component';
 
 export const ROUTES: Routes = [
     { path: '', component: HomeComponent },
@@ -85,8 +86,10 @@ export const ROUTES: Routes = [
     { path: 'msg-finalizar-pedido', loadChildren: './mensagem/msg.module#ModuleMsg' },
     { path: 'empresa-create', component: EmpresaCreateComponent },
     { path: 'empresa', component: EmpresaComponent },
-    { path: 'perfil-funcao-requisicao-create', component: PerfilFuncaoRequisicaoCreateComponent },
+    { path: 'perfil-funcao-requisicao-create/:id', component: PerfilFuncaoRequisicaoCreateComponent },
     { path: 'perfil-funcao-requisicao/:id', component: PerfilFuncaoRequisicaoComponent},
     { path: 'perfil-funcao', component: PerfilFuncaoComponent},
     { path: 'perfil-funcao-create', component: PerfilFuncaoCreateComponent },
+    { path: 'usuario-create/:empresaId', component: UsuarioCreateComponent },
+    
 ];

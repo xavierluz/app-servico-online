@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 import { PerfilFuncaoRequisicaoModel } from './model/perfil-funcao-requisicao.model';
 import { DataTablesResponse } from '../shared/datatable/data-table.model';
 import { MEAT_API } from '../constantes.api';
@@ -20,16 +20,17 @@ export class PerfilFuncaoRequisicaoComponent implements OnInit {
   @Input() EmpresaId: string;
   dtOptions: DataTables.Settings = {};
   funcoesRequisicoes: PerfilFuncaoRequisicaoModel[];
+  funcaoId: string;
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    let Id = this.route.snapshot.params['id'];
-    alert(Id);
+    this.funcaoId = this.route.snapshot.params['id'];
+    this.configuarDataTble();
   }
   configuarDataTble() {
     const that = this;
-
-    this.dtOptions = {
+    
+     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 10,
       serverSide: true,
@@ -37,11 +38,12 @@ export class PerfilFuncaoRequisicaoComponent implements OnInit {
       searching: true,
       ordering: true,
       paging: true,
-      ajax: (dataTablesParameters: any, callback) => {
+       ajax: (dataTablesParameters: DataTablesResponse, callback) => {
+         dataTablesParameters.funcaoId = that.funcaoId
         that.http
           .post<DataTablesResponse>(
-            `${MEAT_API}/Funcao/getsFuncao`,
-            dataTablesParameters, httpOptions,
+          `${MEAT_API}/Funcao/getsFuncaoRequisicao`,
+          dataTablesParameters, httpOptions,
 
         ).subscribe(resp => {
           that.funcoesRequisicoes = resp.data;

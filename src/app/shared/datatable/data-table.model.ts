@@ -9,6 +9,7 @@ class DataTablesResponse {
   Order: DataTableOrder;
   Columns: DataTableColumn;
   Search: DataTableSearch;
+  funcaoId:string;
 }
 class DataTableOrder {
   column: number;

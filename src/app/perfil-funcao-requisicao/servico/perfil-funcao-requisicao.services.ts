@@ -15,7 +15,7 @@ export class PerfilFuncaoRequisicaoServices{
         console.log(_funcaoRequisicao);
         headers.append('Content-Type', 'application/json');
         return this.http.post(`${MEAT_API}/Funcao/adicionarRequisicaoAfuncao`,
-            JSON.stringify(_funcaoRequisicao),
+            _funcaoRequisicao,
             new RequestOptions({ headers: headers }))
             .map(response => response.json()).map(retorno => retorno.Id);
 

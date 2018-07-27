@@ -1,12 +1,13 @@
 class PerfilFuncaoRequisicaoModel {
     Type: string;
     ClaimsIdentity: RequisicoesIdentificadasModel;
-    Properties: any;
     OriginalIssuer: string;
     Issuer: string;
     ValueType: string;
     Value: string;
     CustomSerializationData: number[];
+    FuncaoId:string;
+    Properties:any;
 }
 class RequisicoesIdentificadasModel {
     Name: string;

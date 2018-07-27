@@ -66,6 +66,8 @@ import { PerfilFuncaoCreateComponent } from './perfil-funcao/perfil-funcao-creat
 import { PerfilFuncaoRequisicaoCreateComponent } from './perfil-funcao-requisicao/perfil-funcao-requisicao-create/perfil-funcao-requisicao-create.component';
 import { PerfilFuncaoServices } from './perfil-funcao/servico/perfil-funcao.services';
 import { PerfilFuncaoRequisicaoServices } from './perfil-funcao-requisicao/servico/perfil-funcao-requisicao.services';
+import { UsuarioCreateComponent } from './usuario/usuario-create/usuario-create.component';
+import { UsuarioServices } from './usuario/servico/usuario.service';
 
 registerLocaleData(localePt,'pt-BR');
 @NgModule({ 
@@ -118,6 +120,7 @@ registerLocaleData(localePt,'pt-BR');
     UsuarioRequisicaoComponent,
     PerfilFuncaoCreateComponent,
     PerfilFuncaoRequisicaoCreateComponent,
+    UsuarioCreateComponent,
     
   ],
   imports: [
@@ -134,7 +137,7 @@ registerLocaleData(localePt,'pt-BR');
     CurrencyMaskModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }, EmpresaService, ,
-    PerfilFuncaoServices, PerfilFuncaoRequisicaoServices],
+    PerfilFuncaoServices, PerfilFuncaoRequisicaoServices, UsuarioServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

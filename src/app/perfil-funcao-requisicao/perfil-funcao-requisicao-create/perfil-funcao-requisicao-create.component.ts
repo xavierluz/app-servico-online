@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PerfilFuncaoRequisicaoServices } from '../servico/perfil-funcao-requisicao.services';
 import { PerfilFuncaoRequisicaoModel } from '../model/perfil-funcao-requisicao.model';
 import { TipoRequisicao } from '../../shared/tipos/TipoRequisicao';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 })
 export class PerfilFuncaoRequisicaoCreateComponent implements OnInit {
   @Input() EmpresaId: string;
+  @Input() funcaoId:string;
+
   @ViewChild('fileInput') fileInput: ElementRef;
 
   Types: TipoRequisicao[]=[]//[] = [['', 'Número', 'Texto','Menu','Link'], ['Selecione o tipo', 'Number', 'Text','Menu','Link']];
@@ -55,13 +57,13 @@ export class PerfilFuncaoRequisicaoCreateComponent implements OnInit {
     this.Types.push(tipoRequisicao);
     tipoRequisicao = null;
   }
-  constructor(private formBuilder: FormBuilder, private router: Router,  private perfilFuncaoRequisicaoServices: PerfilFuncaoRequisicaoServices) { 
+  constructor(private formBuilder: FormBuilder, private router: Router, private route: ActivatedRoute,  private perfilFuncaoRequisicaoServices: PerfilFuncaoRequisicaoServices) { 
     this.createForm();
     this.createTypes();
   }
 
   ngOnInit() {
-     
+    this.funcaoId = this.route.snapshot.params['id'];
   }
   onSubmit() {
     const formModel = this.form.value;
@@ -70,9 +72,15 @@ export class PerfilFuncaoRequisicaoCreateComponent implements OnInit {
     funcaoRequisicaoModel.Type = formModel.Type;
     funcaoRequisicaoModel.ValueType = 'string'
     funcaoRequisicaoModel.Value = formModel.Value;
+    funcaoRequisicaoModel.FuncaoId = this.funcaoId;
+    funcaoRequisicaoModel.ClaimsIdentity = null;
+    funcaoRequisicaoModel.Issuer='';
+    funcaoRequisicaoModel.OriginalIssuer='';
+    funcaoRequisicaoModel.Properties =null;
+    funcaoRequisicaoModel.CustomSerializationData =[];
 
     this.perfilFuncaoRequisicaoServices.createFuncaoRequisicao(funcaoRequisicaoModel).subscribe((funcao: string) => {
-      this.router.navigate(['/perfil-funcao-requisicao', { empresaId: this.EmpresaId }])
+      this.router.navigate(['/perfil-funcao-requisicao', this.funcaoId]);
     });
 
   }
