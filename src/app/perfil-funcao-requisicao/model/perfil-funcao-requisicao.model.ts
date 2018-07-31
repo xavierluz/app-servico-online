@@ -1,3 +1,5 @@
+import { EmpresaUsuarioFuncaoModel } from "../../shared/empresa-usuario/empresa-usuario-funcao.model";
+
 class PerfilFuncaoRequisicaoModel {
     Type: string;
     ClaimsIdentity: RequisicoesIdentificadasModel;
@@ -6,7 +8,7 @@ class PerfilFuncaoRequisicaoModel {
     ValueType: string;
     Value: string;
     CustomSerializationData: number[];
-    FuncaoId:string;
+    EmpresaUsuario: EmpresaUsuarioFuncaoModel;
     Properties:any;
 }
 class RequisicoesIdentificadasModel {

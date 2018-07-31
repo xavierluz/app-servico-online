@@ -68,6 +68,12 @@ import { PerfilFuncaoServices } from './perfil-funcao/servico/perfil-funcao.serv
 import { PerfilFuncaoRequisicaoServices } from './perfil-funcao-requisicao/servico/perfil-funcao-requisicao.services';
 import { UsuarioCreateComponent } from './usuario/usuario-create/usuario-create.component';
 import { UsuarioServices } from './usuario/servico/usuario.service';
+import { UsuarioRequisicaoCreateComponent } from './usuario-requisicao/usuario-requisicao-create/usuario-requisicao-create.component';
+import { UsuarioFuncaoComponent } from './usuario-funcao/usuario-funcao.component';
+import { UsuarioLoginComponent } from './usuario-login/usuario-login.component';
+import { UsuarioLoginCreateComponent } from './usuario-login/usuario-login-create/usuario-login-create.component';
+import { UsuarioTokenComponent } from './usuario-token/usuario-token.component';
+import { UsuarioTokenCreateComponent } from './usuario-token/usuario-token-create/usuario-token-create.component';
 
 registerLocaleData(localePt,'pt-BR');
 @NgModule({ 
@@ -121,6 +127,12 @@ registerLocaleData(localePt,'pt-BR');
     PerfilFuncaoCreateComponent,
     PerfilFuncaoRequisicaoCreateComponent,
     UsuarioCreateComponent,
+    UsuarioRequisicaoCreateComponent,
+    UsuarioFuncaoComponent,
+    UsuarioLoginComponent,
+    UsuarioLoginCreateComponent,
+    UsuarioTokenComponent,
+    UsuarioTokenCreateComponent,
     
   ],
   imports: [

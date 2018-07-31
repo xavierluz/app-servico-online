@@ -1,3 +1,5 @@
+import { EmpresaUsuarioFuncaoModel } from "../../shared/empresa-usuario/empresa-usuario-funcao.model";
+
 export class UsuarioModel{
     Id:string;
     LockoutEnabled:boolean;
@@ -14,4 +16,5 @@ export class UsuarioModel{
     ConcurrencyStamp:string;
     Email:string;
     EmailConfirmed:boolean;
+    EmpresaUsuario: EmpresaUsuarioFuncaoModel;
 }

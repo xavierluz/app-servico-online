@@ -30,6 +30,7 @@ import { PerfilFuncaoCreateComponent } from './perfil-funcao/perfil-funcao-creat
 import { PerfilFuncaoComponent } from './perfil-funcao/perfil-funcao.component';
 import { PerfilFuncaoRequisicaoComponent } from './perfil-funcao-requisicao/perfil-funcao-requisicao.component';
 import { UsuarioCreateComponent } from './usuario/usuario-create/usuario-create.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 export const ROUTES: Routes = [
     { path: '', component: HomeComponent },
@@ -91,5 +92,5 @@ export const ROUTES: Routes = [
     { path: 'perfil-funcao', component: PerfilFuncaoComponent},
     { path: 'perfil-funcao-create', component: PerfilFuncaoCreateComponent },
     { path: 'usuario-create/:empresaId', component: UsuarioCreateComponent },
-    
+    { path: 'usuario/:empresaId', component: UsuarioComponent },
 ];

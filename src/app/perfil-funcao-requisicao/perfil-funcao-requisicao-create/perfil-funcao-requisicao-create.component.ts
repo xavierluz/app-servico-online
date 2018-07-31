@@ -4,6 +4,7 @@ import { PerfilFuncaoRequisicaoServices } from '../servico/perfil-funcao-requisi
 import { PerfilFuncaoRequisicaoModel } from '../model/perfil-funcao-requisicao.model';
 import { TipoRequisicao } from '../../shared/tipos/TipoRequisicao';
 import { Router, ActivatedRoute } from '@angular/router';
+import { EmpresaUsuarioFuncaoModel } from '../../shared/empresa-usuario/empresa-usuario-funcao.model';
 
 
 @Component({
@@ -68,11 +69,12 @@ export class PerfilFuncaoRequisicaoCreateComponent implements OnInit {
   onSubmit() {
     const formModel = this.form.value;
     let funcaoRequisicaoModel: PerfilFuncaoRequisicaoModel = new PerfilFuncaoRequisicaoModel();
-
+    let empresaUsuarioFuncaoModel: EmpresaUsuarioFuncaoModel = new EmpresaUsuarioFuncaoModel();
+    empresaUsuarioFuncaoModel.FuncaoId = this.funcaoId;
     funcaoRequisicaoModel.Type = formModel.Type;
     funcaoRequisicaoModel.ValueType = 'string'
     funcaoRequisicaoModel.Value = formModel.Value;
-    funcaoRequisicaoModel.FuncaoId = this.funcaoId;
+    funcaoRequisicaoModel.EmpresaUsuario = empresaUsuarioFuncaoModel;
     funcaoRequisicaoModel.ClaimsIdentity = null;
     funcaoRequisicaoModel.Issuer='';
     funcaoRequisicaoModel.OriginalIssuer='';

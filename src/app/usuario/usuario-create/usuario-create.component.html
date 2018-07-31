@@ -35,7 +35,7 @@
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <p>&nbsp;</p>
                   <app-input-container erroMensage="Digitar somente números" validoMensage="Ok" label="PhoneNumber">
-                    <input type="text" id="PhoneNumber" formControlName="PhoneNumber" maxlength="50" placeholder="Preencher o número de telefone"
+                    <input type="text" id="PhoneNumber" formControlName="PhoneNumber" maxlength="12" placeholder="Preencher o número de telefone"
                       class="form-control">
                   </app-input-container>
                 </div>
@@ -43,14 +43,14 @@
               <div class="form-group">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <app-input-container erroMensage="Email é obrigatório!" validoMensage="Ok" label="Email">
-                    <input type="email" id="Email" formControlName="Email" maxlength="50" placeholder="Preencher o email" class="form-control">
+                    <input type="email" id="Email" formControlName="Email" maxlength="100" placeholder="Preencher o email" class="form-control">
                   </app-input-container>
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <app-input-container erroMensage="Confirmar o email obrigatório!" validoMensage="Ok" label="NormalizedEmail">
-                    <input type="NormalizedEmail" id="NormalizedEmail" formControlName="NormalizedEmail" maxlength="50" placeholder="Confirmar email" class="form-control">
+                    <input type="NormalizedEmail" id="NormalizedEmail" formControlName="NormalizedEmail" maxlength="100" placeholder="Confirmar email" class="form-control">
                   </app-input-container>
                 </div>
               </div>
