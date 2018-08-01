@@ -4,6 +4,7 @@ import { PerfilFuncaoRequisicaoModel } from './model/perfil-funcao-requisicao.mo
 import { DataTablesResponse } from '../shared/datatable/data-table.model';
 import { MEAT_API } from '../constantes.api';
 import { ActivatedRoute } from '@angular/router';
+import { EmpresaUsuarioFuncaoModel } from '../shared/empresa-usuario/empresa-usuario-funcao.model';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -39,7 +40,9 @@ export class PerfilFuncaoRequisicaoComponent implements OnInit {
       ordering: true,
       paging: true,
        ajax: (dataTablesParameters: DataTablesResponse, callback) => {
-         dataTablesParameters.funcaoId = that.funcaoId
+         let empresaUsuarioFuncao: EmpresaUsuarioFuncaoModel = new EmpresaUsuarioFuncaoModel();
+         empresaUsuarioFuncao.FuncaoId = that.funcaoId;
+         dataTablesParameters.empresaUsuarioFuncao = empresaUsuarioFuncao;
         that.http
           .post<DataTablesResponse>(
           `${MEAT_API}/Funcao/getsFuncaoRequisicao`,

@@ -185,3 +185,6 @@
   color:#12416B;
   background-color:rgba(225, 228, 214, 0.425);
 }
+.table-column-100{
+  max-width: 40px;
+}

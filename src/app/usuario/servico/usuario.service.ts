@@ -9,7 +9,7 @@ import { MEAT_API } from "../../constantes.api";
 export class UsuarioServices{
     constructor(private http: Http, private httpCliente: HttpClient) { }
 
-    createUsuario(usuarioModel: UsuarioModel): Observable<string> {
+    createUsuario(usuarioModel: UsuarioModel): Observable<any> {
         const headers = new Headers();
         let _usuario = JSON.stringify(usuarioModel);
         console.log(_usuario);
@@ -17,7 +17,7 @@ export class UsuarioServices{
         return this.http.post(`${MEAT_API}/Usuario/Registrar`,
             _usuario,
             new RequestOptions({ headers: headers }))
-            .map(response => response.json()).map(retorno => retorno.Id);
+            .map(response => response.json()).map(usuario => usuario);
 
     }
 }

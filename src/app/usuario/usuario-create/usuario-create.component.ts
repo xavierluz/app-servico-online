@@ -36,7 +36,6 @@ export class UsuarioCreateComponent implements OnInit {
 
   ngOnInit() {
     this.EmpresaId = this.route.snapshot.params['empresaId'];
-    alert(this.EmpresaId);
   }
 
   onSubmit() {
@@ -50,8 +49,9 @@ export class UsuarioCreateComponent implements OnInit {
     usuarioModel.NormalizedEmail = formModel.NormalizedEmail;
     usuarioModel.EmpresaUsuario = empresaUsuario;
     usuarioModel.Email = formModel.Email;
-    this.usuarioServices.createUsuario(usuarioModel).subscribe((usuariio: string) => {
-      this.router.navigate(['/usuario', this.EmpresaId]);
+    this.usuarioServices.createUsuario(usuarioModel).subscribe((usuario: any) => {
+      console.log(usuario);
+      this.router.navigate(['/usuario-requisicao-create', this.EmpresaId, usuario.id]);
     });
 
   }

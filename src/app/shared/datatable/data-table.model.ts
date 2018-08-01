@@ -1,3 +1,5 @@
+import { EmpresaUsuarioFuncaoModel } from "../empresa-usuario/empresa-usuario-funcao.model";
+
 class DataTablesResponse {
   data: any[];
   draw: number;
@@ -9,7 +11,7 @@ class DataTablesResponse {
   Order: DataTableOrder;
   Columns: DataTableColumn;
   Search: DataTableSearch;
-  funcaoId:string;
+  empresaUsuarioFuncao: EmpresaUsuarioFuncaoModel;
 }
 class DataTableOrder {
   column: number;
