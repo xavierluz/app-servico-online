@@ -75,6 +75,7 @@ import { UsuarioLoginCreateComponent } from './usuario-login/usuario-login-creat
 import { UsuarioTokenComponent } from './usuario-token/usuario-token.component';
 import { UsuarioTokenCreateComponent } from './usuario-token/usuario-token-create/usuario-token-create.component';
 import { UsuarioRequisicaoServices } from './usuario-requisicao/servico/usuario-requisicao.services';
+import { UsuarioLoginServices } from './usuario-login/servico/usuario-login.services';
 
 registerLocaleData(localePt,'pt-BR');
 @NgModule({ 
@@ -150,7 +151,7 @@ registerLocaleData(localePt,'pt-BR');
     CurrencyMaskModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }, EmpresaService, ,
-    PerfilFuncaoServices, PerfilFuncaoRequisicaoServices, UsuarioServices, UsuarioRequisicaoServices],
+    PerfilFuncaoServices, PerfilFuncaoRequisicaoServices, UsuarioServices, UsuarioRequisicaoServices, UsuarioLoginServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

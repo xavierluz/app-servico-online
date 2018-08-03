@@ -1,69 +1,64 @@
 <div class="content-wrapper">
-    <section class="content">
-      <div class="row">
-        <section class="content-header">
+  <section class="content">
+    <div class="row">
+      <section class="content-header">
+      </section>
+
+      <section class="content">
+        <section class="invoice">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-xs-12">
+                <h2 class="page-header">
+                  <i class="fa fa-shopping-cart"></i> Cadastrar serviço para o tipo de serviço: <span class="tipo-servico-h2">{{TipoServicoNome}}</span>
+                </h2>
+              </div>
+            </div>
+
+            <div class="row invoice-info">
+              <div class="form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <app-input-container erroMensage="Nome do serviço é obrigatório!" label="Name">
+                    <input type="text" id="Nome" formControlName="Nome" maxlength="50" placeholder="Nome do serviço" class="form-control">
+                  </app-input-container>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <app-input-container erroMensage="Descrição deve possuir no mínimo 10 e no máximo 1000 caracteres" validoMensage="Valor preenchido"
+                    label="Descricao">
+                    <textarea class="form-control" rows="3" cols="3" data-val="true" id="Descricao" formControlName="Descricao"></textarea>
+                  </app-input-container>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                  <app-input-container erroMensage="obrigatório preencher a indicação do serviço!" validoMensage="Valor preenchido" label="Indicacao">
+                    <input type="text" id="Indicacao" formControlName="Indicacao" maxlength="200" placeholder="Serviço indicado para ?" class="form-control">
+                  </app-input-container>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <app-input-container erroMensage="Preço do serviço é obrigatório" validoMensage="Preco preenchido" label="Preco">
+                    <input type="text" id="Preco" formControlName="Preco" maxlength="20" placeholder="Preço do servico"class="form-control Moeda" placeholder="R$ 0,00" currencyMask [(ngModel)]="value" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+                  </app-input-container>
+                </div>
+              </div>
+              
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12">
+                <button type="button" [routerLink]="['/servico',tipoServicoId]" routerLinkActive="active" class="btn btn-success pull-left">
+                  <i class="fa fa-undo"></i> Retornar
+                </button>
+                <button type="submit" [disabled]="form.invalid" class="btn btn-success pull-right">
+                  <i class="fa fa-spinner fa-spin fa-fw"></i> Salvar
+                </button>
+              </div>
+            </div>
+          </form>
         </section>
-  
-        <section class="content">
-          <section class="invoice">
-            <form #form="ngForm">
-              <div class="row">
-                <div class="col-xs-12">
-                  <h2 class="page-header">
-                    <i class="fa fa-shopping-cart"></i> Cadastrar Serviço
-                  </h2>
-                </div>
-              </div>
-  
-              <div class="row invoice-info">
-                <div class="form-group">
-                  <div class="col-sm-6 col-xs-6">
-                    <app-input-container erroMensage="Nome é obrigatório e minímo de 5 caracteres." label="Nome">
-                      <input type="text" name="Nome" placeholder="Nome do serviço" class="form-control" ngModel required
-                        minlength="5" maxlength="50" autocomplete="off">
-                    </app-input-container>
-                  </div>
-                  <div class="col-sm-6 col-xs-6">
-                    <app-input-container erroMensage="Indicação é obrigatório e minímo de 5 caracteres." label="indicacao">
-                      <input type="text" name="indicacao" placeholder="Serviço é indicado?" class="form-control" ngModel>
-                    </app-input-container>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-8 col-xs-8">
-                    <select class="form-control" id="tipoServico" name="tipoServico">
-                      <option name="preco" value="">Selecione o Tipo Serviço</option>
-                    </select>
-                    <span class="text-danger field-validation-valid" data-valmsg-for="tipoServico" data-valmsg-replace="true"></span>
-                  </div>
-                  <div class="col-sm-4 col-xs-4">
-                      <input name="preco" currencyMask placeholder="Preço do serviço"  class="form-control" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"/>
-                  </div>
-                </div>
-    
-                <div class="form-group">
-                  
-                  <div class="col-sm-12 col-xs-12 margin-top-text-area">
-                    <app-input-container erroMensage="Descrição é obrigatório e minímo de 5 caracteres." label="Descrição">
-                      <textarea name="descricaoServico" rows="5" cols="3" placeholder="Descrição do tipo de serviço" class="form-control" ngModel
-                        minlength="5" autocomplete="off"></textarea>
-                    </app-input-container>
-                  </div>
-                </div>
-                
-               
-                
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                  <button type="button" [disabled]="! form.valid" class="btn btn-success pull-right">
-                    <i class="fa fa-credit-card"></i> Salvar
-                  </button>
-                </div>
-              </div>
-            </form>
-          </section>
-        </section>
-      </div>
-    </section>
-  </div>
+      </section>
+    </div>
+  </section>
+</div>

@@ -32,6 +32,7 @@ import { PerfilFuncaoRequisicaoComponent } from './perfil-funcao-requisicao/perf
 import { UsuarioCreateComponent } from './usuario/usuario-create/usuario-create.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioRequisicaoCreateComponent } from './usuario-requisicao/usuario-requisicao-create/usuario-requisicao-create.component';
+import { UsuarioRequisicaoComponent } from './usuario-requisicao/usuario-requisicao.component';
 
 export const ROUTES: Routes = [
     { path: '', component: HomeComponent },
@@ -66,7 +67,7 @@ export const ROUTES: Routes = [
         ]
     },
     { path: 'tipo-servico-create', component: TipoServicoCreateComponent },
-    { path: 'servico-create', component: ServicoCreateComponent },
+    { path: 'servico-create/:id/:tipo', component: ServicoCreateComponent },
     {
         path: 'servico/:id', component: ServicoComponent, children: [
             { path: 'index', component: ServicoIndexComponent },
@@ -95,5 +96,5 @@ export const ROUTES: Routes = [
     { path: 'usuario-create/:empresaId', component: UsuarioCreateComponent },
     { path: 'usuario/:empresaId', component: UsuarioComponent },
     { path: 'usuario-requisicao-create/:empresaId/:usuarioId', component: UsuarioRequisicaoCreateComponent },
-    
+    { path: 'usuario-requisicao/:empresaId/:usuarioId', component: UsuarioRequisicaoComponent },
 ];

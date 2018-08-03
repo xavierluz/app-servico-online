@@ -1,49 +1,60 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, Output } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ServicoModel, Servico } from '../model/servico.model';
+import { EmpresaUsuarioFuncaoModel } from '../../shared/empresa-usuario/empresa-usuario-funcao.model';
+import { ServicoComponenteService } from '../servico/servico-componente.service';
 
 @Component({
-  selector: 'app-servico-create',
-  templateUrl: './servico-create.component.html',
-  styleUrls: ['./servico-create.component.css']
+    selector: 'app-servico-create',
+    templateUrl: './servico-create.component.html',
+    styleUrls: ['./servico-create.component.css']
 })
 export class ServicoCreateComponent implements OnInit {
-  dropdownList = [];
-  selectedItems = [];
-  dropdownSettings = {};
-  ngOnInit(){
-      this.dropdownList = [
-                            {"id":1,"itemName":"Xampu Loreal Ceramidas"},
-                            {"id":2,"itemName":"Hidratante Dove"},
-                            {"id":3,"itemName":"Máscra Loreal"},
-                            {"id":4,"itemName":"Alisamento Nultri"}
-                          ];
-      this.selectedItems = [
-                              //{"id":2,"itemName":"Singapore"},
-                              //{"id":3,"itemName":"Australia"},
-                              //{"id":4,"itemName":"Canada"},
-                              //{"id":5,"itemName":"South Korea"}
-                          ];
-      this.dropdownSettings = { 
-                                singleSelection: false, 
-                                text:"Selecione produto(s)",
-                                selectAllText:'Selecionar Todos',
-                                unSelectAllText:'Deselecionar Todos',
-                                enableSearchFilter: true,
-                                classes:"myclass custom-class"
-                              };            
-  }
-  onItemSelect(item:any){
-      console.log(item);
-      console.log(this.selectedItems);
-  }
-  OnItemDeSelect(item:any){
-      console.log(item);
-      console.log(this.selectedItems);
-  }
-  onSelectAll(items: any){
-      console.log(items);
-  }
-  onDeSelectAll(items: any){
-      console.log(items);
-  }
+    @Input() EmpresaId: string;
+    @Input() UsuarioId: string;
+    @Input() tipoServicoId: number;
+    @Input() TipoServicoNome:string;
+
+    @ViewChild('fileInput') fileInput: ElementRef;
+    form: FormGroup;
+    decimalPattern = /^\d+(\.\d{1,2})?$/i;
+
+    constructor(private servicoComponenteService: ServicoComponenteService, private formBuilder: FormBuilder, private router: Router, private route: ActivatedRoute) {
  
+        this.createForm();
+    }
+    ngOnInit() {
+        this.tipoServicoId = this.route.snapshot.params['id'];
+        this.TipoServicoNome = this.route.snapshot.params['tipo'];
+
+    }
+
+    createForm() {
+        this.form = this.formBuilder.group({
+            Nome: this.formBuilder.control('', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]),
+            Indicacao: this.formBuilder.control('', [Validators.required, Validators.minLength(5), Validators.maxLength(150)]),
+            Descricao: this.formBuilder.control('', [Validators.required, Validators.minLength(5), Validators.maxLength(1000)]),
+            Preco: this.formBuilder.control('', [Validators.required, Validators.minLength(2), Validators.maxLength(20), Validators.pattern(this.decimalPattern)])
+
+        });
+    }
+    onSubmit() {
+        const formModel = this.form.value;
+        let servivoModel: ServicoModel = new Servico();
+        let empresaUsuario: EmpresaUsuarioFuncaoModel = new EmpresaUsuarioFuncaoModel();
+        servivoModel.empresaUsuario = empresaUsuario;
+        servivoModel.Descricao = formModel.Descricao;
+        servivoModel.Nome = formModel.Nome;
+        servivoModel.Indicacao = formModel.Indicacao;
+        servivoModel.Preco = formModel.Preco;
+        servivoModel.tipoServicoDominioId = this.tipoServicoId;
+
+        this.servicoComponenteService.createServico(servivoModel).subscribe((servico: any) => {
+           // console.log(servico);
+           // this.router.navigate(['/servico-create', this.tipoServicoId]);
+        });
+
+    }
+
 }

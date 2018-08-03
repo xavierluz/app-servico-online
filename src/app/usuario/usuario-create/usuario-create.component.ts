@@ -24,7 +24,7 @@ export class UsuarioCreateComponent implements OnInit {
     this.form = this.formBuilder.group({
       Email: this.formBuilder.control('', [Validators.required, Validators.minLength(5), Validators.maxLength(100), Validators.pattern(this.emailPattern)]),
       UserName: this.formBuilder.control('', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]),
-      PhoneNumber: this.formBuilder.control('', [Validators.required, Validators.minLength(5), Validators.maxLength(11), Validators.pattern(this.numeroPattern)]),
+      PhoneNumber: this.formBuilder.control('', [Validators.required, Validators.minLength(5), Validators.maxLength(12), Validators.pattern(this.numeroPattern)]),
       PasswordHash: this.formBuilder.control('', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]),
       NormalizedEmail: this.formBuilder.control('', [Validators.required, Validators.minLength(5), Validators.maxLength(100), Validators.pattern(this.emailPattern)])
 

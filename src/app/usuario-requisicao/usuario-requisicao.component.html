@@ -1,3 +1,32 @@
-<p>
-  usuario-requisicao works!
-</p>
+<div class="row">
+  <hr/>
+  <div class="col-xs-12 col-sm-8 col-md-12" style="margin:5px 10px 5px 10px !important;">
+    <div class="row">
+      <div class="col-xs-1 col-sm-1 col-md-1"></div>
+      <div class="col-lg-10">
+        <a [routerLink]="['/usuario-requisicao-create',EmpresaId,UsuarioId]" routerLinkActive="active" class="btn btn-openid">
+          <span class="glyphicon glyphicon-new-window" aria-hidden="true" data-toggle="tooltip" title="Nova empresa"></span>
+        </a>
+      </div>
+    </div>
+    <p></p>
+
+    <div class="row">
+      <div class="col-xs-1 col-sm-1 col-md-1"></div>
+      <div class="col-xs-10 col-sm-7 col-md-10 table-responsive" style="border-bottom:solid 0px #ffffff;border-left:solid 0px #ffffff;border-right:solid 0px #ffffff">
+        <table datatable [dtOptions]="dtOptions" class="row-border hover">
+          <thead>
+            <tr>
+              <th data-sortable="false" class="td-invisivel">Id</th>
+              <th data-sortable="true" class="data-table-column">Tipo da requisição</th>
+              <th data-sortable="true" class="data-table-column">Tipo do valor</th>
+              <th data-sortable="true" class="data-table-column">Valor da requisição</th>
+              <th data-sortable="false" class="data-table-column" style="max-width: 40px;"></th>
+            </tr>
+          </thead>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
