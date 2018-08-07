@@ -17,9 +17,10 @@ import { ServicoComponenteService } from "../servico/servico/servico-componente.
 import { CompraService } from "../compra/servico/compra.service";
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { NotificationService } from "../mensagem/notification.service";
+import { ModalBoostrapComponent } from './modal-boostrap/modal-boostrap.component';
 
 @NgModule({
-    declarations:[InputComponent,RadioComponent,RatingComponent, SnackbarComponent],
+    declarations:[InputComponent,RadioComponent,RatingComponent, SnackbarComponent, ModalBoostrapComponent],
     imports:[CommonModule,FormsModule,ReactiveFormsModule],
     exports:[InputComponent,RadioComponent,SnackbarComponent,RatingComponent,CommonModule,FormsModule,ReactiveFormsModule]
 })

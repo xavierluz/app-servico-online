@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, Output } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ServicoModel, Servico } from '../model/servico.model';
 import { EmpresaUsuarioFuncaoModel } from '../../shared/empresa-usuario/empresa-usuario-funcao.model';
 import { ServicoComponenteService } from '../servico/servico-componente.service';
+
 
 @Component({
     selector: 'app-servico-create',
@@ -17,6 +18,8 @@ export class ServicoCreateComponent implements OnInit {
     @Input() TipoServicoNome:string;
 
     @ViewChild('fileInput') fileInput: ElementRef;
+    display = 'none'; //default Variable
+    Mensagem:string;
     form: FormGroup;
     decimalPattern = /^\d+(\.\d{1,2})?$/i;
 
@@ -51,10 +54,17 @@ export class ServicoCreateComponent implements OnInit {
         servivoModel.tipoServicoDominioId = this.tipoServicoId;
 
         this.servicoComponenteService.createServico(servivoModel).subscribe((servico: any) => {
-           // console.log(servico);
-           // this.router.navigate(['/servico-create', this.tipoServicoId]);
+            this.Mensagem="Serviço incluido com sucesso!";
+            this.openModalDialog()
         });
 
+    }
+    openModalDialog() {
+        this.display = 'block'; //Set block css
+    }
+
+    closeModalDialog() {
+        this.display = 'none'; //set none css after close dialog
     }
 
 }

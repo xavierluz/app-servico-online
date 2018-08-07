@@ -1,4 +1,4 @@
-<div class="col-md-9 col-xs-12">
+<div class="col-md-9 col-xs-12  pre-scrollable" style="min-height: 600px !important">
   <app-servico-item *ngFor="let servicoItemModel of servicoItemModels | async" [servicoItemModel] ="servicoItemModel" (add) ="compras.addItem($event)" ></app-servico-item>
 </div>
 <div class="col-md-3 col-xs-12">
