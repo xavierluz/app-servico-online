@@ -22,7 +22,7 @@ import { ModalBoostrapComponent } from './modal-boostrap/modal-boostrap.componen
 @NgModule({
     declarations:[InputComponent,RadioComponent,RatingComponent, SnackbarComponent, ModalBoostrapComponent],
     imports:[CommonModule,FormsModule,ReactiveFormsModule],
-    exports:[InputComponent,RadioComponent,SnackbarComponent,RatingComponent,CommonModule,FormsModule,ReactiveFormsModule]
+    exports: [InputComponent, RadioComponent, SnackbarComponent, RatingComponent, CommonModule, FormsModule, ReactiveFormsModule, ModalBoostrapComponent]
 })
 export class SharedModule{
     static forRoot():ModuleWithProviders{

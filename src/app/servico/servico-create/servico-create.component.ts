@@ -56,6 +56,7 @@ export class ServicoCreateComponent implements OnInit {
         this.servicoComponenteService.createServico(servivoModel).subscribe((servico: any) => {
             this.Mensagem="Serviço incluido com sucesso!";
             this.openModalDialog()
+           
         });
 
     }

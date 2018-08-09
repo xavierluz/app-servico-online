@@ -197,3 +197,6 @@
 .header-mensagem-info{
   background-color:#00a65a; 
 }
+.servico-create-height{
+  min-height: 600px !important
+}
